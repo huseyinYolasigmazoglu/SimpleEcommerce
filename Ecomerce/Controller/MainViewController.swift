@@ -8,11 +8,22 @@
 import UIKit
 
 class MainViewController: UIViewController {
+    
+    private var collectionViewCellWidth : CGFloat = 180
+    
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        collectionViewCellWidth = (self.view.frame.width) / 2 - 5
         
+        collectionView.dataSource = self
+        collectionView.delegate = self
         
         let trial = ApiOperations()
         trial.getAllProducts { (products) in
@@ -24,6 +35,37 @@ class MainViewController: UIViewController {
         }
 
     }
-    
+}
 
+
+
+//MARK: - UICollectionView extensions - DataSource
+extension MainViewController : UICollectionViewDataSource{
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        return 5
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCell", for: indexPath)
+        
+        return cell
+        
+    }
+    
+    
+}
+
+
+//MARK: - UICollectionView extensions - FlowLayout
+extension MainViewController : UICollectionViewDelegateFlowLayout{
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
+    {
+        return CGSize(width: collectionViewCellWidth, height: collectionViewCellWidth)
+    }
+    
 }
