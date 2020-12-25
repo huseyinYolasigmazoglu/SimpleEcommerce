@@ -24,11 +24,11 @@
                                     <size key="itemSize" width="180" height="189"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProductCell" id="2Il-G2-Osr">
-                                        <rect key="frame" x="0.0" y="0.0" width="180" height="189"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProductCell" id="2Il-G2-Osr" customClass="ProductViewCell" customModule="Ecomerce" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="0.0" width="180" height="189"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="G5G-MU-vHM">
                                             <rect key="frame" x="0.0" y="0.0" width="180" height="189"/>
@@ -47,6 +47,9 @@
                                                 <constraint firstAttribute="trailing" secondItem="p9d-yA-pJg" secondAttribute="trailing" id="uir-fv-vYl"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="productMainImage" destination="p9d-yA-pJg" id="4fh-Z9-wu9"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>

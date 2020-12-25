@@ -14,13 +14,13 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-
+    var imageStr : String?
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionViewCellWidth = (self.view.frame.width) / 2 - 5
+        collectionViewCellWidth = (self.view.frame.width) / 2 - 15
         
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -32,6 +32,9 @@ class MainViewController: UIViewController {
            print(products?.Products[0].name)
            print(products?.Products[0].altImage)
            print(products?.Products[0].allImages[0])
+            
+            self.imageStr = products?.Products[0].allImages[0]
+            self.collectionView.reloadData()
         }
 
     }
@@ -50,7 +53,9 @@ extension MainViewController : UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCell", for: indexPath) as! ProductViewCell
+        
+        cell.setProductImage(urlLink: self.imageStr ?? "")
         
         return cell
         
