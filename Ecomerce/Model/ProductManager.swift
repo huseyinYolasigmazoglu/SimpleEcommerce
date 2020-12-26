@@ -43,6 +43,20 @@ class ProductManager {
         
         return imageUrl
     }
+    
+    func getProductName(_ index:Int) -> String{
+        
+        var name = ""
+        
+        if let product = self.allProducts?.Products[index]
+        {
+            name = product.name ?? ""
+        }
+        
+        return name
+    }
+    
+    
 }
 
 

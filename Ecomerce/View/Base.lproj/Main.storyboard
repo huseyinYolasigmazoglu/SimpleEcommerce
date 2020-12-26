@@ -72,15 +72,15 @@
                                                             <rect key="frame" x="0.0" y="207" width="180" height="93"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bwm-QC-Km0">
-                                                                    <rect key="frame" x="0.0" y="7" width="180" height="41"/>
+                                                                    <rect key="frame" x="0.0" y="7" width="180" height="36"/>
                                                                     <string key="text">Label
 vvvvvvvv</string>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7d-vp-Dnf">
-                                                                    <rect key="frame" x="0.0" y="58" width="180" height="20.5"/>
+                                                                    <rect key="frame" x="0.0" y="53" width="180" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -110,6 +110,7 @@ vvvvvvvv</string>
                                         </collectionViewCellContentView>
                                         <connections>
                                             <outlet property="productMainImage" destination="p9d-yA-pJg" id="4fh-Z9-wu9"/>
+                                            <outlet property="productName" destination="bwm-QC-Km0" id="Ivn-gG-7AO"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

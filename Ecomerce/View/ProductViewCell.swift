@@ -12,6 +12,9 @@ class ProductViewCell: UICollectionViewCell {
     
     @IBOutlet private weak var productMainImage: UIImageView!
     
+    @IBOutlet private weak var productName: UILabel!
+    
+    
     
     func setProductImage(urlLink: String) {
         
@@ -19,6 +22,14 @@ class ProductViewCell: UICollectionViewCell {
             let imageUrl = URL(string: urlLink)!
             
             productMainImage.sd_setImage(with: imageUrl)
+        }
+    }
+    
+    
+    func setProductName(name: String) {
+        
+        if name != "" {
+            productName.text = name
         }
     }
     

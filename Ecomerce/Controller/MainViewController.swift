@@ -49,6 +49,8 @@ extension MainViewController : UICollectionViewDataSource{
         
         cell.setProductImage(urlLink: manager.getImgLocation(indexPath.row))
         
+        cell.setProductName(name: manager.getProductName(indexPath.row))
+        
         return cell
         
     }
