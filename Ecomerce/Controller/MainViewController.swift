@@ -5,7 +5,7 @@
 //  Created by Huseyin Yolasigmazoglu on 25.12.2020.
 //
 
-import UIKit
+import UIKit 
 
 class MainViewController: UIViewController {
     
@@ -66,7 +66,7 @@ extension MainViewController : UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
     {
-        return CGSize(width: collectionViewCellWidth, height: 320)
+        return CGSize(width: collectionViewCellWidth, height: Constants.productCellWith)
     }
     
 }
