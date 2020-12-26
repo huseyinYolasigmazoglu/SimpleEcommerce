@@ -32,7 +32,7 @@ class ProductManager {
             self.delegate?.loadData(self, allProducts: products)
         }
     }
-
+    
     func getImgLocation(_ index:Int) -> String {
         var imageUrl = ""
         
@@ -79,8 +79,6 @@ class ProductManager {
         
         return product
     }
-    
-    
 }
 
 

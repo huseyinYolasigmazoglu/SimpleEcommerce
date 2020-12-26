@@ -10,6 +10,8 @@
 		28ED6D5889281361D97B9F11 /* Pods_Ecomerce.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 639C6C771D83F8E30B6353FD /* Pods_Ecomerce.framework */; };
 		523682F4259712B0004D0793 /* ProductManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523682F3259712B0004D0793 /* ProductManager.swift */; };
 		52368300259753C6004D0793 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523682FF259753C6004D0793 /* Constants.swift */; };
+		523683082597763F004D0793 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523683072597763F004D0793 /* ProductDetailViewController.swift */; };
+		5236830D25979446004D0793 /* ProductDetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5236830C25979446004D0793 /* ProductDetailViewCell.swift */; };
 		528C056725961C9300E0372C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528C056625961C9300E0372C /* AppDelegate.swift */; };
 		528C056925961C9300E0372C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528C056825961C9300E0372C /* SceneDelegate.swift */; };
 		528C056E25961C9300E0372C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 528C056C25961C9300E0372C /* Main.storyboard */; };
@@ -43,6 +45,8 @@
 /* Begin PBXFileReference section */
 		523682F3259712B0004D0793 /* ProductManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductManager.swift; sourceTree = "<group>"; };
 		523682FF259753C6004D0793 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		523683072597763F004D0793 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
+		5236830C25979446004D0793 /* ProductDetailViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewCell.swift; sourceTree = "<group>"; };
 		528C056325961C9300E0372C /* Ecomerce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ecomerce.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		528C056625961C9300E0372C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		528C056825961C9300E0372C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -169,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				529CDCC82596259A00E1A894 /* MainViewController.swift */,
+				523683072597763F004D0793 /* ProductDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -186,6 +191,7 @@
 			children = (
 				528C056C25961C9300E0372C /* Main.storyboard */,
 				529CDCF925967BEB00E1A894 /* ProductViewCell.swift */,
+				5236830C25979446004D0793 /* ProductDetailViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -383,8 +389,10 @@
 			files = (
 				529CDCBD2596228800E1A894 /* ProductDetail.swift in Sources */,
 				529CDCCF2596278A00E1A894 /* ApiOperations.swift in Sources */,
+				523683082597763F004D0793 /* ProductDetailViewController.swift in Sources */,
 				523682F4259712B0004D0793 /* ProductManager.swift in Sources */,
 				529CDCFA25967BEB00E1A894 /* ProductViewCell.swift in Sources */,
+				5236830D25979446004D0793 /* ProductDetailViewCell.swift in Sources */,
 				528C056725961C9300E0372C /* AppDelegate.swift in Sources */,
 				528C056925961C9300E0372C /* SceneDelegate.swift in Sources */,
 				529CDCC92596259A00E1A894 /* MainViewController.swift in Sources */,

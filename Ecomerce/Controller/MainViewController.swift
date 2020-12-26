@@ -30,12 +30,32 @@ class MainViewController: UIViewController {
         manager.getProducts()
         
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let identifier = segue.identifier {
+            if identifier == Constants.gotoDetailsSegue
+            {
+                if let destinationViewController = segue.destination as? ProductDetailViewController {
+                    
+                    if let index = sender as? IndexPath {
+                        
+                        destinationViewController.loadProductDetails(product: manager.getProduct(index.row))
+                    }
+                }
+            }
+        }
+    }
 }
-
-
 
 //MARK: - UICollectionView extensions - DataSource
 extension MainViewController : UICollectionViewDataSource{
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        performSegue(withIdentifier: Constants.gotoDetailsSegue, sender: indexPath)
+        
+    }
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
@@ -45,14 +65,11 @@ extension MainViewController : UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCell", for: indexPath) as! ProductViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.ProductCell, for: indexPath) as! ProductViewCell
         
-        //cell.setProductImage(urlLink: manager.getImgLocation(indexPath.row))
-        
-       // cell.setProductName(name: manager.getProductName(indexPath.row))
         
         cell.setProduct(product: manager.getProduct(indexPath.row))
-    
+        
         return cell
         
     }
