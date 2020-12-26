@@ -45,7 +45,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="p4s-hG-Fm0">
-                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <rect key="frame" x="0.0" y="161" width="414" height="735"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="AVl-Cz-lX5">
                                     <size key="itemSize" width="180" height="189"/>
@@ -80,17 +80,28 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Arrivals" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C5M-OJ-W2S">
+                                <rect key="frame" x="17" y="102" width="393" height="43"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="p4s-hG-Fm0" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="FAi-n3-Ljh"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="p4s-hG-Fm0" secondAttribute="bottom" constant="-34" id="NYa-Vi-7dP"/>
-                            <constraint firstItem="p4s-hG-Fm0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="aIV-xf-CzC"/>
-                            <constraint firstItem="p4s-hG-Fm0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-44" id="whP-Rb-lNx"/>
+                            <constraint firstItem="C5M-OJ-W2S" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="14" id="38J-fk-4Z4"/>
+                            <constraint firstItem="C5M-OJ-W2S" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="17" id="7CM-3a-F1m"/>
+                            <constraint firstItem="p4s-hG-Fm0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8FL-r8-RkZ"/>
+                            <constraint firstItem="p4s-hG-Fm0" firstAttribute="top" secondItem="C5M-OJ-W2S" secondAttribute="bottom" constant="16" id="Du8-EK-oWK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="p4s-hG-Fm0" secondAttribute="bottom" constant="-34" id="Ek4-sR-xQ9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="C5M-OJ-W2S" secondAttribute="trailing" constant="4" id="IYy-EE-f6d"/>
+                            <constraint firstItem="p4s-hG-Fm0" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="VSV-KU-dLS"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="A2u-wu-ltl"/>
+                    <navigationItem key="navigationItem" id="A2u-wu-ltl">
+                        <barButtonItem key="rightBarButtonItem" title="Filter" id="ujj-tB-W5N"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="p4s-hG-Fm0" id="Y1V-6T-yxM"/>
                     </connections>

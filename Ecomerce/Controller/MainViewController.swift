@@ -10,13 +10,14 @@ import UIKit
 class MainViewController: UIViewController {
     
     private var collectionViewCellWidth : CGFloat = 180
+    private var  allProducts : ProductDetail?
     
+    private var manager : ProductManager  =  ProductManager()
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var imageStr : String?
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,19 +25,10 @@ class MainViewController: UIViewController {
         
         collectionView.dataSource = self
         collectionView.delegate = self
+        manager.delegate = self
         
-        let trial = ApiOperations()
-        trial.getAllProducts { (products) in
-            //print huseyin
-           print(products?.Metadata.Breadcrumbs)
-           print(products?.Products[0].name)
-           print(products?.Products[0].altImage)
-           print(products?.Products[0].allImages[0])
-            
-            self.imageStr = products?.Products[0].allImages[0]
-            self.collectionView.reloadData()
-        }
-
+        manager.getProducts()
+        
     }
 }
 
@@ -47,7 +39,7 @@ extension MainViewController : UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 5
+        return self.allProducts?.Products.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -55,7 +47,7 @@ extension MainViewController : UICollectionViewDataSource{
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCell", for: indexPath) as! ProductViewCell
         
-        cell.setProductImage(urlLink: self.imageStr ?? "")
+        cell.setProductImage(urlLink: manager.getImgLocation(indexPath.row))
         
         return cell
         
@@ -72,5 +64,20 @@ extension MainViewController : UICollectionViewDelegateFlowLayout{
     {
         return CGSize(width: collectionViewCellWidth, height: collectionViewCellWidth)
     }
+    
+}
+
+
+
+//MARK: -ManagerDelegate
+extension MainViewController : ProductManagerDelegate {
+    
+    func loadData(_ pokemonManagerDelegate: ProductManager, allProducts: ProductDetail?) {
+        
+        self.allProducts = allProducts
+        collectionView.reloadData()
+    }
+    
+    
     
 }

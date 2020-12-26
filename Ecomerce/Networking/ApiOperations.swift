@@ -23,7 +23,7 @@ class ApiOperations {
                 completionhandler(aResponse)
             }
             else{
-                print("Hata")
+                print("Exception")
                 completionhandler(nil)
             }
         }
