@@ -56,6 +56,30 @@ class ProductManager {
         return name
     }
     
+    func getProductPrice(_ index:Int) -> String{
+        
+        var cost = ""
+        
+        if let product = self.allProducts?.Products[index]
+        {
+            cost = product.cost ?? ""
+        }
+        
+        return cost
+    }
+    
+    func getProduct(_ index:Int) -> Product?{
+        
+        var product : Product? = nil
+        
+        if let result = self.allProducts?.Products[index]
+        {
+            product = result
+        }
+        
+        return product
+    }
+    
     
 }
 

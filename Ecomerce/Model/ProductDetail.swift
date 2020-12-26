@@ -17,9 +17,9 @@ class ProductDetail: Codable {
 class Product: Codable {
     public var name:String?
     public var cost:String?
-    public var prodid:String
+    public var prodid:String?
     public var altImage:String?
-    public var allImages:[String]
+    public var allImages:[String]?
 }
 
 class Metadata: Codable {

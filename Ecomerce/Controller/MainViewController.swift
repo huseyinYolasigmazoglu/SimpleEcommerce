@@ -47,10 +47,12 @@ extension MainViewController : UICollectionViewDataSource{
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCell", for: indexPath) as! ProductViewCell
         
-        cell.setProductImage(urlLink: manager.getImgLocation(indexPath.row))
+        //cell.setProductImage(urlLink: manager.getImgLocation(indexPath.row))
         
-        cell.setProductName(name: manager.getProductName(indexPath.row))
+       // cell.setProductName(name: manager.getProductName(indexPath.row))
         
+        cell.setProduct(product: manager.getProduct(indexPath.row))
+    
         return cell
         
     }
@@ -64,7 +66,7 @@ extension MainViewController : UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
     {
-        return CGSize(width: collectionViewCellWidth, height: 300)
+        return CGSize(width: collectionViewCellWidth, height: 320)
     }
     
 }

@@ -14,7 +14,19 @@ class ProductViewCell: UICollectionViewCell {
     
     @IBOutlet private weak var productName: UILabel!
     
+    @IBOutlet private weak var productCost: UILabel!
     
+    func setProduct(product:Product?)  {
+        
+        if let _product = product {
+            
+            setProductImage(urlLink: _product.altImage ?? "")
+            
+            setProductName(name: _product.name ?? "")
+            
+            setProductCost(cost: _product.cost ?? "")
+        }  
+    }
     
     func setProductImage(urlLink: String) {
         
@@ -25,11 +37,17 @@ class ProductViewCell: UICollectionViewCell {
         }
     }
     
-    
     func setProductName(name: String) {
         
         if name != "" {
             productName.text = name
+        }
+    }
+    
+    func setProductCost(cost: String) {
+        
+        if cost != "" {
+            productCost.text = "£\(cost)"
         }
     }
     

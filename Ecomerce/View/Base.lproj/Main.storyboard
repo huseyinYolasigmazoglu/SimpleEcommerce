@@ -48,28 +48,27 @@
                                 <rect key="frame" x="0.0" y="161" width="414" height="701"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="AVl-Cz-lX5">
-                                    <size key="itemSize" width="180" height="300"/>
+                                    <size key="itemSize" width="180" height="320"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProductCell" id="2Il-G2-Osr" customClass="ProductViewCell" customModule="Ecomerce" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="0.0" width="180" height="300"/>
+                                        <rect key="frame" x="10" y="0.0" width="180" height="320"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="G5G-MU-vHM">
-                                            <rect key="frame" x="0.0" y="0.0" width="180" height="300"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="180" height="320"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="AsI-gs-Nwq">
-                                                    <rect key="frame" x="0.0" y="0.0" width="180" height="300"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="180" height="320"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="p9d-yA-pJg">
-                                                            <rect key="frame" x="0.0" y="0.0" width="180" height="207"/>
-                                                            <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="180" height="221"/>
                                                         </imageView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VyN-fT-Tce">
-                                                            <rect key="frame" x="0.0" y="207" width="180" height="93"/>
+                                                            <rect key="frame" x="0.0" y="221" width="180" height="99"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bwm-QC-Km0">
                                                                     <rect key="frame" x="0.0" y="7" width="180" height="36"/>
@@ -80,13 +79,12 @@ vvvvvvvv</string>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7d-vp-Dnf">
-                                                                    <rect key="frame" x="0.0" y="53" width="180" height="20.5"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <rect key="frame" x="0.0" y="53" width="180" height="19.5"/>
+                                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
-                                                            <color key="backgroundColor" systemColor="systemGreenColor"/>
                                                             <constraints>
                                                                 <constraint firstItem="bwm-QC-Km0" firstAttribute="top" secondItem="VyN-fT-Tce" secondAttribute="top" constant="7" id="3WN-UQ-adu"/>
                                                                 <constraint firstItem="bwm-QC-Km0" firstAttribute="leading" secondItem="VyN-fT-Tce" secondAttribute="leading" id="5GS-eS-Qnn"/>
@@ -100,7 +98,6 @@ vvvvvvvv</string>
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
-                                            <color key="backgroundColor" systemColor="systemRedColor"/>
                                             <constraints>
                                                 <constraint firstItem="AsI-gs-Nwq" firstAttribute="top" secondItem="G5G-MU-vHM" secondAttribute="top" id="6cQ-fs-qNT"/>
                                                 <constraint firstAttribute="bottom" secondItem="AsI-gs-Nwq" secondAttribute="bottom" id="HXv-Dh-J88"/>
@@ -109,6 +106,7 @@ vvvvvvvv</string>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <connections>
+                                            <outlet property="productCost" destination="p7d-vp-Dnf" id="ct5-HF-M2Y"/>
                                             <outlet property="productMainImage" destination="p9d-yA-pJg" id="4fh-Z9-wu9"/>
                                             <outlet property="productName" destination="bwm-QC-Km0" id="Ivn-gG-7AO"/>
                                         </connections>
@@ -167,15 +165,6 @@ vvvvvvvv</string>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
