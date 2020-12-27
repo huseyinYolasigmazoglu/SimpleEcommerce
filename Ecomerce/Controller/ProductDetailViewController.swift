@@ -13,6 +13,9 @@ class ProductDetailViewController: UIViewController, UICollectionViewDelegate {
     @IBOutlet private weak var sliderCollectionView: UICollectionView!
     
     
+    @IBOutlet weak var likeLabel: UILabel!
+    
+    
     @IBOutlet private weak var productName: UILabel!
     
     @IBOutlet private weak var productCost: UILabel!
@@ -23,29 +26,30 @@ class ProductDetailViewController: UIViewController, UICollectionViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         sliderCollectionView.dataSource = self
         sliderCollectionView.delegate = self
         
-      
-    }
-  
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         
+        if let detail = product {
+            self.productName.text = detail.name
+            self.productCost.text = "£\(detail.cost ?? ""   )"
+            self.productId.text =   "Product  no:\(detail.prodid ?? "")"
+        }
     }
     
     
     func loadProductDetails(product:Product?)  {
         
         if let detail = product {
+            
             self.product = detail
             print(self.product?.allImages?.count ?? 0)
         }
         else{
             print("bos")
         }
-    
+        
     }
     
 }
