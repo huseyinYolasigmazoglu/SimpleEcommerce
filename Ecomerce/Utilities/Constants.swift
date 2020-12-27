@@ -14,6 +14,9 @@ class Constants {
     static var gotoDetailsSegue :String = "goToDetailSegue"
     
     static var ProductCell :String = "ProductCell"
+    static var ProductDetailCell :String = "ProductDetailCell"
     
-    static var testUrl = "https://static-ri.ristack-3.nn4maws.net/v1/plp/en_gb/2506/products.json"
+    static var testUrl :String = "https://static-ri.ristack-3.nn4maws.net/v1/plp/en_gb/2506/products.json"
+    
+    static var mainImageUrlBase :String = "https://riverisland.scene7.com/is/image/RiverIsland/"
 }

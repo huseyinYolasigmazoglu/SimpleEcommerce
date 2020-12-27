@@ -12,15 +12,15 @@ class ProductDetailViewController: UIViewController, UICollectionViewDelegate {
     
     @IBOutlet private weak var sliderCollectionView: UICollectionView!
     
-    
     @IBOutlet weak var likeLabel: UILabel!
-    
     
     @IBOutlet private weak var productName: UILabel!
     
     @IBOutlet private weak var productCost: UILabel!
     
     @IBOutlet private weak var productId: UILabel!
+    
+    
     
     private var product:Product?
     
@@ -33,7 +33,7 @@ class ProductDetailViewController: UIViewController, UICollectionViewDelegate {
         
         if let detail = product {
             self.productName.text = detail.name
-            self.productCost.text = "£\(detail.cost ?? ""   )"
+            self.productCost.text = detail.cost?.toTwoDigitFloat() ?? ""
             self.productId.text =   "Product  no: \(detail.prodid ?? "")"
         }
     }
@@ -44,10 +44,9 @@ class ProductDetailViewController: UIViewController, UICollectionViewDelegate {
         if let detail = product {
             
             self.product = detail
-            print(self.product?.allImages?.count ?? 0)
         }
         else{
-            print("bos")
+            print("emty")
         }
         
     }
@@ -63,7 +62,7 @@ extension ProductDetailViewController : UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductDetailCell", for: indexPath) as! ProductDetailViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.ProductDetailCell, for: indexPath) as! ProductDetailViewCell
         
         
         cell.setProductImage(urlLink: product?.allImages?[indexPath.row] ?? "")

@@ -14,20 +14,59 @@ protocol ProductManagerDelegate {
 
 class ProductManager {
     
+    //MARK: - private variables
     private var productApi: ApiOperations
     private var allProducts : ProductDetail?
     private var endPointUrl :String
+    private var mainImageUrlBase :String
     
     var delegate : ProductManagerDelegate?
     
-    init() {
+    //MARK: - Constructor
+    init(endPoint:String,imageUrl:String) {
         productApi = ApiOperations()
-        endPointUrl = Constants.testUrl
+        self.endPointUrl = Constants.testUrl
+        self.mainImageUrlBase = Constants.mainImageUrlBase
+    }
+    //MARK: - Private Functions
+    private func setAllMainImages()  {
+        
+        for item in self.allProducts!.Products {
+            getImgLocation(product: item)
+        }
     }
     
+    private func getImgLocation(product:Product?) {
+        
+        if let prdct = product
+        {
+            let image = prdct.mainImage ?? ""
+            
+            if image.isEmpty {
+                prdct.mainImage = findMainImage(id: prdct.prodid!)
+            }
+        }
+    }
+    
+    private func findMainImage(id:String) -> String  {
+        
+        if id.isEmpty {
+            return ""
+        }
+        else{
+            return mainImageUrlBase + id + "_main"
+        }
+    }
+    
+    //MARK: - Public Functions
     func setUrl(with url:String)  {
         
         endPointUrl =  url.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""
+    }
+    
+    func setMainImageUrl(with url:String)  {
+        
+        mainImageUrlBase =  url.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""
     }
     
     func getProducts()  {
@@ -38,21 +77,11 @@ class ProductManager {
                 if let all = products{
                     
                     self.allProducts = all
+                    self.setAllMainImages()
                     self.delegate?.loadData(self, allProducts: all)
                 }
             }
         }
-    }
-    
-    func getImgLocation(_ index:Int) -> String {
-        var imageUrl = ""
-        
-        if let product = self.allProducts?.Products[index]
-        {
-            imageUrl = product.altImage ?? ""
-        }
-        
-        return imageUrl
     }
     
     func getProductName(_ index:Int) -> String{

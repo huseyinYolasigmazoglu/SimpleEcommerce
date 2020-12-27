@@ -12,11 +12,9 @@ class MainViewController: UIViewController {
     private var collectionViewCellWidth : CGFloat = 180
     private var  allProducts : ProductDetail?
     
-    private var manager : ProductManager  =  ProductManager()
+    private var manager : ProductManager  =  ProductManager(endPoint: Constants.testUrl, imageUrl: Constants.mainImageUrlBase)
     
     @IBOutlet weak var collectionView: UICollectionView!
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +54,6 @@ extension MainViewController : UICollectionViewDataSource{
         
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         return self.allProducts?.Products.count ?? 0
@@ -84,16 +81,12 @@ extension MainViewController : UICollectionViewDelegateFlowLayout{
     
 }
 
-
 //MARK: -ManagerDelegate
 extension MainViewController : ProductManagerDelegate {
     
-    func loadData(_ pokemonManagerDelegate: ProductManager, allProducts: ProductDetail?) {
+    func loadData(_ productManagerDelegate: ProductManager, allProducts: ProductDetail?) {
         
         self.allProducts = allProducts
         collectionView.reloadData()
     }
-    
-    
-    
 }

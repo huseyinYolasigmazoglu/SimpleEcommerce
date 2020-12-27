@@ -20,7 +20,8 @@ class ProductViewCell: UICollectionViewCell {
         
         if let _product = product {
             
-            setProductImage(urlLink: _product.altImage ?? "")
+            
+            setProductImage(urlLink: _product.mainImage ?? "")
             
             setProductName(name: _product.name ?? "")
             
@@ -47,7 +48,7 @@ class ProductViewCell: UICollectionViewCell {
     func setProductCost(cost: String) {
         
         if cost != "" {
-            productCost.text = "£\(cost)"
+            productCost.text = cost.toTwoDigitFloat()
         }
     }
     
