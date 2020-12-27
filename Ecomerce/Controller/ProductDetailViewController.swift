@@ -34,7 +34,7 @@ class ProductDetailViewController: UIViewController, UICollectionViewDelegate {
         if let detail = product {
             self.productName.text = detail.name
             self.productCost.text = "£\(detail.cost ?? ""   )"
-            self.productId.text =   "Product  no:\(detail.prodid ?? "")"
+            self.productId.text =   "Product  no: \(detail.prodid ?? "")"
         }
     }
     

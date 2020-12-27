@@ -16,7 +16,7 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-   
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,13 +70,9 @@ extension MainViewController : UICollectionViewDataSource{
         
         cell.setProduct(product: manager.getProduct(indexPath.row))
         
-        return cell
-        
+        return cell   
     }
-    
-    
 }
-
 
 //MARK: - UICollectionView extensions - FlowLayout
 extension MainViewController : UICollectionViewDelegateFlowLayout{
@@ -87,7 +83,6 @@ extension MainViewController : UICollectionViewDelegateFlowLayout{
     }
     
 }
-
 
 
 //MARK: -ManagerDelegate

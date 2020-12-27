@@ -9,27 +9,38 @@ import Foundation
 
 protocol ProductManagerDelegate {
     
-    func loadData(_ pokemonManagerDelegate: ProductManager,allProducts: ProductDetail? )
+    func loadData(_ productManagerDelegate: ProductManager,allProducts: ProductDetail? )
 }
-
 
 class ProductManager {
     
     private var productApi: ApiOperations
-    private var  allProducts : ProductDetail?
+    private var allProducts : ProductDetail?
+    private var endPointUrl :String
     
     var delegate : ProductManagerDelegate?
     
     init() {
         productApi = ApiOperations()
+        endPointUrl = Constants.testUrl
+    }
+    
+    func setUrl(with url:String)  {
+        
+        endPointUrl =  url.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""
     }
     
     func getProducts()  {
         
-        productApi.getAllProducts { (products) in
-            
-            self.allProducts = products
-            self.delegate?.loadData(self, allProducts: products)
+        productApi.getAllProducts(endPointUrl) { (products, error) in
+            if error == nil {
+                
+                if let all = products{
+                    
+                    self.allProducts = all
+                    self.delegate?.loadData(self, allProducts: all)
+                }
+            }
         }
     }
     
