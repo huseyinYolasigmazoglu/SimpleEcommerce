@@ -20,13 +20,21 @@ class ProductViewCell: UICollectionViewCell {
         
         if let _product = product {
             
-            
             setProductImage(urlLink: _product.mainImage ?? "")
             
             setProductName(name: _product.name ?? "")
             
             setProductCost(cost: _product.cost ?? "")
         }  
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        //reset all
+        productName.text = ""
+        productMainImage.image = nil
+        productCost.text = ""
     }
     
     func setProductImage(urlLink: String) {

@@ -38,7 +38,6 @@ class ProductDetailViewController: UIViewController, UICollectionViewDelegate {
         }
     }
     
-    
     func loadProductDetails(product:Product?)  {
         
         if let detail = product {

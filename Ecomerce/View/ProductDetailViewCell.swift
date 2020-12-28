@@ -15,11 +15,16 @@ class ProductDetailViewCell: UICollectionViewCell {
     
     func setProductImage(urlLink: String) {
         
-        if urlLink != "" {
-            let imageUrl = URL(string: urlLink)!
+        if !urlLink.isEmpty {
             
+            let imageUrl = URL(string: urlLink)!
             productImage.sd_setImage(with: imageUrl)
         }
     }
-    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        //reset all
+        productImage.image = nil
+    }
 }

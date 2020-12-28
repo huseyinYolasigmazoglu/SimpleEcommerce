@@ -19,7 +19,8 @@ class Product: Codable {
     public var prodid:String?
     public var altImage:String?
     public var allImages:[String]?
-    public var mainImage:String?  //not in json ,  will be used to find main image to show in collectionview.
+    public var mainImage:String?  //mainImage : not in json , /will be used to find main image to show in collectionview.
+    
 }
 
 class Metadata: Codable {

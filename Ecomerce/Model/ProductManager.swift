@@ -15,28 +15,33 @@ protocol ProductManagerDelegate {
 class ProductManager {
     
     //MARK: - private variables
-    private var productApi: ApiOperations
+    
+    private var productApi = ApiOperations()
     private var allProducts : ProductDetail?
     private var endPointUrl :String
     private var mainImageUrlBase :String
     
-    var delegate : ProductManagerDelegate?
+    public var delegate : ProductManagerDelegate?
+    
     
     //MARK: - Constructor
     init(endPoint:String,imageUrl:String) {
-        productApi = ApiOperations()
+        
         self.endPointUrl = Constants.testUrl
         self.mainImageUrlBase = Constants.mainImageUrlBase
     }
+    
     //MARK: - Private Functions
     private func setAllMainImages()  {
-        
-        for item in self.allProducts!.Products {
-            getImgLocation(product: item)
+        if let products = self.allProducts?.Products
+        {
+            for item in products {
+                setImgLocation(product: item)
+            }
         }
     }
     
-    private func getImgLocation(product:Product?) {
+    private func setImgLocation(product:Product?) {
         
         if let prdct = product
         {
@@ -77,7 +82,7 @@ class ProductManager {
                 if let all = products{
                     
                     self.allProducts = all
-                    self.setAllMainImages()
+                    //self.setAllMainImages()
                     self.delegate?.loadData(self, allProducts: all)
                 }
             }
@@ -115,6 +120,7 @@ class ProductManager {
         if let result = self.allProducts?.Products[index]
         {
             product = result
+            setImgLocation(product: product)
         }
         
         return product
