@@ -25,6 +25,8 @@ class DetailTableViewController: UIViewController, UITableViewDelegate, UITableV
         
         flowTableView.register(LikeCountTableViewCell.nib(), forCellReuseIdentifier: LikeCountTableViewCell.identifier)
         
+        flowTableView.register(ProductNameTableViewCell.nib(), forCellReuseIdentifier: ProductNameTableViewCell.identifier)
+        
         productImageSize = CGSize(width: self.view.frame.width, height: self.view.frame.height / 2)
         
     }
@@ -51,14 +53,21 @@ class DetailTableViewController: UIViewController, UITableViewDelegate, UITableV
             
             return cell
         }
+        else if indexPath.row == 2 {
+            
+            let cell = flowTableView.dequeueReusableCell(withIdentifier: ProductNameTableViewCell.identifier, for: indexPath) as! ProductNameTableViewCell
+           
+            cell.productDetail = self.product
+            print(self.product?.name)
+            
+           return cell
+        }
         else{
             let cell  = UITableViewCell()
             
             return cell
         }
         
-        
-       
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -67,7 +76,7 @@ class DetailTableViewController: UIViewController, UITableViewDelegate, UITableV
             return productImageSize.height
         }
         else {
-            return 50
+            return 58
         }
     }
     

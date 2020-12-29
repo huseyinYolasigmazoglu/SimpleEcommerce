@@ -16,7 +16,7 @@ class ProductDetailTableViewCell: UITableViewCell, UICollectionViewDelegate, UIC
         return UINib(nibName: "ProductDetailTableViewCell", bundle: nil)
     }
     
-    @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet private var collectionView: UICollectionView!
     
     var productDetail : Product?
     var cellSize : CGSize = CGSize(width: 400, height: 400)
