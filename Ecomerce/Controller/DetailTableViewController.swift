@@ -23,9 +23,10 @@ class DetailTableViewController: UIViewController, UITableViewDelegate, UITableV
         
         flowTableView.register(ProductDetailTableViewCell.nib(), forCellReuseIdentifier: ProductDetailTableViewCell.identifier)
         
-        flowTableView.register(LikeCountTableViewCell.nib(), forCellReuseIdentifier: LikeCountTableViewCell.identifier)
         
-        flowTableView.register(ProductNameTableViewCell.nib(), forCellReuseIdentifier: ProductNameTableViewCell.identifier)
+        
+        flowTableView.register(ProductInfoTableViewCell.nib(), forCellReuseIdentifier: ProductInfoTableViewCell.identifier)
+        
         
         productImageSize = CGSize(width: self.view.frame.width, height: self.view.frame.height / 2)
         
@@ -33,7 +34,7 @@ class DetailTableViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 4
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -49,19 +50,13 @@ class DetailTableViewController: UIViewController, UITableViewDelegate, UITableV
         }
         else if indexPath.row == 1 {
             
-             let cell = flowTableView.dequeueReusableCell(withIdentifier: LikeCountTableViewCell.identifier, for: indexPath) as! LikeCountTableViewCell
+            let cell = flowTableView.dequeueReusableCell(withIdentifier: ProductInfoTableViewCell.identifier, for: indexPath) as! ProductInfoTableViewCell
+            
+            cell.product = self.product
             
             return cell
         }
-        else if indexPath.row == 2 {
-            
-            let cell = flowTableView.dequeueReusableCell(withIdentifier: ProductNameTableViewCell.identifier, for: indexPath) as! ProductNameTableViewCell
-           
-            cell.productDetail = self.product
-            print(self.product?.name)
-            
-           return cell
-        }
+        
         else{
             let cell  = UITableViewCell()
             
@@ -76,7 +71,7 @@ class DetailTableViewController: UIViewController, UITableViewDelegate, UITableV
             return productImageSize.height
         }
         else {
-            return 58
+            return ProductInfoTableViewCell.height
         }
     }
     

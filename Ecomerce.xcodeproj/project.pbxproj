@@ -30,10 +30,8 @@
 		52D4C82C259A5DCC00191EA3 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D4C82A259A5DCC00191EA3 /* ImageCollectionViewCell.swift */; };
 		52D4C82D259A5DCC00191EA3 /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52D4C82B259A5DCC00191EA3 /* ImageCollectionViewCell.xib */; };
 		52D4C832259A5E8300191EA3 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D4C831259A5E8300191EA3 /* DetailTableViewController.swift */; };
-		52D714EE259B1E1E00A8BD11 /* LikeCountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D714EC259B1E1E00A8BD11 /* LikeCountTableViewCell.swift */; };
-		52D714EF259B1E1E00A8BD11 /* LikeCountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52D714ED259B1E1E00A8BD11 /* LikeCountTableViewCell.xib */; };
-		52D714FB259B2A6A00A8BD11 /* ProductNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D714F9259B2A6A00A8BD11 /* ProductNameTableViewCell.swift */; };
-		52D714FC259B2A6A00A8BD11 /* ProductNameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52D714FA259B2A6A00A8BD11 /* ProductNameTableViewCell.xib */; };
+		52D71509259B3C0600A8BD11 /* ProductInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D71507259B3C0600A8BD11 /* ProductInfoTableViewCell.swift */; };
+		52D7150A259B3C0600A8BD11 /* ProductInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52D71508259B3C0600A8BD11 /* ProductInfoTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,10 +80,8 @@
 		52D4C82A259A5DCC00191EA3 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		52D4C82B259A5DCC00191EA3 /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		52D4C831259A5E8300191EA3 /* DetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
-		52D714EC259B1E1E00A8BD11 /* LikeCountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeCountTableViewCell.swift; sourceTree = "<group>"; };
-		52D714ED259B1E1E00A8BD11 /* LikeCountTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LikeCountTableViewCell.xib; sourceTree = "<group>"; };
-		52D714F9259B2A6A00A8BD11 /* ProductNameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductNameTableViewCell.swift; sourceTree = "<group>"; };
-		52D714FA259B2A6A00A8BD11 /* ProductNameTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductNameTableViewCell.xib; sourceTree = "<group>"; };
+		52D71507259B3C0600A8BD11 /* ProductInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoTableViewCell.swift; sourceTree = "<group>"; };
+		52D71508259B3C0600A8BD11 /* ProductInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductInfoTableViewCell.xib; sourceTree = "<group>"; };
 		602ED527502A8914D22FE934 /* Pods-Ecomerce.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ecomerce.release.xcconfig"; path = "Target Support Files/Pods-Ecomerce/Pods-Ecomerce.release.xcconfig"; sourceTree = "<group>"; };
 		639C6C771D83F8E30B6353FD /* Pods_Ecomerce.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ecomerce.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7353D6F1A88FE5F40B0FED5D /* Pods-Ecomerce.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ecomerce.debug.xcconfig"; path = "Target Support Files/Pods-Ecomerce/Pods-Ecomerce.debug.xcconfig"; sourceTree = "<group>"; };
@@ -237,10 +233,8 @@
 			children = (
 				52D4C820259A5D7C00191EA3 /* ProductDetailTableViewCell.swift */,
 				52D4C821259A5D7C00191EA3 /* ProductDetailTableViewCell.xib */,
-				52D714EC259B1E1E00A8BD11 /* LikeCountTableViewCell.swift */,
-				52D714ED259B1E1E00A8BD11 /* LikeCountTableViewCell.xib */,
-				52D714F9259B2A6A00A8BD11 /* ProductNameTableViewCell.swift */,
-				52D714FA259B2A6A00A8BD11 /* ProductNameTableViewCell.xib */,
+				52D71507259B3C0600A8BD11 /* ProductInfoTableViewCell.swift */,
+				52D71508259B3C0600A8BD11 /* ProductInfoTableViewCell.xib */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -367,10 +361,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52D714FC259B2A6A00A8BD11 /* ProductNameTableViewCell.xib in Resources */,
-				52D714EF259B1E1E00A8BD11 /* LikeCountTableViewCell.xib in Resources */,
 				528C057325961C9400E0372C /* LaunchScreen.storyboard in Resources */,
 				528C057025961C9400E0372C /* Assets.xcassets in Resources */,
+				52D7150A259B3C0600A8BD11 /* ProductInfoTableViewCell.xib in Resources */,
 				52D4C823259A5D7C00191EA3 /* ProductDetailTableViewCell.xib in Resources */,
 				528C056E25961C9300E0372C /* Main.storyboard in Resources */,
 				52D4C82D259A5DCC00191EA3 /* ImageCollectionViewCell.xib in Resources */,
@@ -448,15 +441,14 @@
 				529CDCFA25967BEB00E1A894 /* ProductViewCell.swift in Sources */,
 				52D4C832259A5E8300191EA3 /* DetailTableViewController.swift in Sources */,
 				5236835D25989744004D0793 /* FilterViewController.swift in Sources */,
-				52D714EE259B1E1E00A8BD11 /* LikeCountTableViewCell.swift in Sources */,
 				5236830D25979446004D0793 /* ProductDetailViewCell.swift in Sources */,
 				524C901A2599262900DFEDEA /* Extensions.swift in Sources */,
 				528C056725961C9300E0372C /* AppDelegate.swift in Sources */,
 				52D4C82C259A5DCC00191EA3 /* ImageCollectionViewCell.swift in Sources */,
 				528C056925961C9300E0372C /* SceneDelegate.swift in Sources */,
+				52D71509259B3C0600A8BD11 /* ProductInfoTableViewCell.swift in Sources */,
 				529CDCC92596259A00E1A894 /* MainViewController.swift in Sources */,
 				52368300259753C6004D0793 /* Constants.swift in Sources */,
-				52D714FB259B2A6A00A8BD11 /* ProductNameTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
