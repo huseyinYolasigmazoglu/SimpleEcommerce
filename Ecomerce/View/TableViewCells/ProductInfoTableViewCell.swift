@@ -17,7 +17,7 @@ class ProductInfoTableViewCell: UITableViewCell {
     
     static let identifier = "ProductInfoTableViewCell"
     
-    static let height : CGFloat = 250
+    static let height : CGFloat = 336
     
     static func nib() -> UINib
     {

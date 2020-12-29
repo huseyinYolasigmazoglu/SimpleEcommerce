@@ -184,7 +184,7 @@ vvvvvvvv</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GIK-f7-qcv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1897" y="-459"/>
+            <point key="canvasLocation" x="1895.6521739130437" y="-459.375"/>
         </scene>
         <!--Detail Table View Controller-->
         <scene sceneID="S16-qT-Qlv">
@@ -198,14 +198,27 @@ vvvvvvvv</string>
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kkv-eg-8aA">
+                                <rect key="frame" x="8" y="98" width="20" height="21.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="2mW-ff-jqM"/>
+                                    <constraint firstAttribute="height" constant="25" id="Vwf-fz-WRT"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="chevron.backward" catalog="system"/>
+                                <connections>
+                                    <action selector="close:" destination="FZ6-lr-AqV" eventType="touchUpInside" id="bdx-Qq-hwE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Axk-9u-Z4j"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="hZY-v1-gdh" firstAttribute="leading" secondItem="Axk-9u-Z4j" secondAttribute="leading" id="70C-cy-St9"/>
                             <constraint firstItem="Axk-9u-Z4j" firstAttribute="trailing" secondItem="hZY-v1-gdh" secondAttribute="trailing" id="9Sa-mX-Ea0"/>
+                            <constraint firstItem="kkv-eg-8aA" firstAttribute="leading" secondItem="Axk-9u-Z4j" secondAttribute="leading" constant="8" id="egk-zA-kpc"/>
                             <constraint firstItem="Axk-9u-Z4j" firstAttribute="bottom" secondItem="hZY-v1-gdh" secondAttribute="bottom" id="fQe-fU-EEH"/>
                             <constraint firstItem="hZY-v1-gdh" firstAttribute="top" secondItem="Axk-9u-Z4j" secondAttribute="top" id="sCY-c6-4ju"/>
+                            <constraint firstItem="kkv-eg-8aA" firstAttribute="top" secondItem="Axk-9u-Z4j" secondAttribute="top" constant="8" id="zAW-lS-WDo"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="iXs-Tm-bb9"/>
@@ -215,7 +228,7 @@ vvvvvvvv</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="USM-8z-AEv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1932" y="210"/>
+            <point key="canvasLocation" x="1931.8840579710147" y="209.59821428571428"/>
         </scene>
         <!--Product Detail View Controller-->
         <scene sceneID="Awv-Wd-sSA">
@@ -376,6 +389,7 @@ vvvvvvvv</string>
         </scene>
     </scenes>
     <resources>
+        <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

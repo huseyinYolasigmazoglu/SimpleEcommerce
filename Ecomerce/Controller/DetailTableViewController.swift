@@ -9,6 +9,13 @@ import UIKit
 
 class DetailTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    
+    @IBAction func close(_ sender: UIButton) {
+        
+        navigationController?.popViewController(animated: true)
+    }
+    
+    
     @IBOutlet weak var flowTableView: UITableView!
     
     var product : Product?
@@ -30,6 +37,17 @@ class DetailTableViewController: UIViewController, UITableViewDelegate, UITableV
         
         productImageSize = CGSize(width: self.view.frame.width, height: self.view.frame.height / 2)
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        //navigationController?.isNavigationBarHidden = false
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
