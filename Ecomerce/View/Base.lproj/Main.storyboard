@@ -148,6 +148,7 @@ vvvvvvvv</string>
                     <connections>
                         <outlet property="collectionView" destination="p4s-hG-Fm0" id="Y1V-6T-yxM"/>
                         <segue destination="n1x-8T-R0G" kind="show" identifier="goToDetailSegue" id="EDE-be-gBc"/>
+                        <segue destination="FZ6-lr-AqV" kind="show" identifier="goToDetailFlowSegue" id="DBk-GF-ZVo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -183,7 +184,38 @@ vvvvvvvv</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GIK-f7-qcv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1848" y="-269"/>
+            <point key="canvasLocation" x="1897" y="-459"/>
+        </scene>
+        <!--Detail Table View Controller-->
+        <scene sceneID="S16-qT-Qlv">
+            <objects>
+                <viewController id="FZ6-lr-AqV" customClass="DetailTableViewController" customModule="Ecomerce" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="isf-xs-c4m">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hZY-v1-gdh">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Axk-9u-Z4j"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hZY-v1-gdh" firstAttribute="leading" secondItem="Axk-9u-Z4j" secondAttribute="leading" id="70C-cy-St9"/>
+                            <constraint firstItem="Axk-9u-Z4j" firstAttribute="trailing" secondItem="hZY-v1-gdh" secondAttribute="trailing" id="9Sa-mX-Ea0"/>
+                            <constraint firstItem="Axk-9u-Z4j" firstAttribute="bottom" secondItem="hZY-v1-gdh" secondAttribute="bottom" id="fQe-fU-EEH"/>
+                            <constraint firstItem="hZY-v1-gdh" firstAttribute="top" secondItem="Axk-9u-Z4j" secondAttribute="top" id="sCY-c6-4ju"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="iXs-Tm-bb9"/>
+                    <connections>
+                        <outlet property="flowTableView" destination="hZY-v1-gdh" id="OIN-Pu-cRa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="USM-8z-AEv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1932" y="210"/>
         </scene>
         <!--Product Detail View Controller-->
         <scene sceneID="Awv-Wd-sSA">
@@ -253,23 +285,23 @@ vvvvvvvv</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="£24.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhb-WO-u9h">
-                                                        <rect key="frame" x="0.0" y="106" width="384" height="45"/>
+                                                        <rect key="frame" x="0.0" y="106" width="384" height="44.5"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product no:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7dW-yi-Joj">
-                                                        <rect key="frame" x="0.0" y="155" width="384" height="33"/>
+                                                        <rect key="frame" x="0.0" y="154.5" width="384" height="32.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D9t-02-OOv">
-                                                        <rect key="frame" x="0.0" y="192" width="384" height="110"/>
+                                                        <rect key="frame" x="0.0" y="191" width="384" height="111"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Size Guide">
                                                                 <attributes>
-                                                                    <font key="NSFont" size="18" name=".SFNS-Regular"/>
+                                                                    <font key="NSFont" metaFont="system" size="18"/>
                                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                     <integer key="NSUnderline" value="1"/>
                                                                 </attributes>
@@ -322,7 +354,7 @@ vvvvvvvv</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3uz-4F-ErM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1870" y="377"/>
+            <point key="canvasLocation" x="1971" y="1252"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RzN-wc-9uN">

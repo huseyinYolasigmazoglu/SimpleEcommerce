@@ -41,6 +41,17 @@ class MainViewController: UIViewController {
                     }
                 }
             }
+            else if identifier == "goToDetailFlowSegue"
+            {
+                if let destinationViewController = segue.destination as? DetailTableViewController {
+                    
+                    if let index = sender as? IndexPath {
+                         
+                        destinationViewController.product = manager.getProduct(index.row)
+                        
+                    }
+                }
+            }
         }
     }
 }
@@ -50,8 +61,9 @@ extension MainViewController : UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        performSegue(withIdentifier: Constants.gotoDetailsSegue, sender: indexPath)
+        //performSegue(withIdentifier: Constants.gotoDetailsSegue, sender: indexPath)
         
+        performSegue(withIdentifier: "goToDetailFlowSegue", sender: indexPath)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
