@@ -7,7 +7,8 @@
 
 import UIKit
 
-class ProductDetailTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
+//MARK: -Static functions and variables
+extension ProductDetailTableViewCell {
     
     static let identifier = "ProductDetailTableViewCell"
     
@@ -15,8 +16,14 @@ class ProductDetailTableViewCell: UITableViewCell, UICollectionViewDelegate, UIC
     {
         return UINib(nibName: "ProductDetailTableViewCell", bundle: nil)
     }
+}
+
+class ProductDetailTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     
     @IBOutlet private var collectionView: UICollectionView!
+    @IBOutlet weak var pageControl: UIPageControl!
+    
+    private var currentPageControlIndex = 0
     
     var productDetail : Product?
     var cellSize : CGSize = CGSize(width: 400, height: 400)
@@ -30,6 +37,21 @@ class ProductDetailTableViewCell: UITableViewCell, UICollectionViewDelegate, UIC
         collectionView.delegate = self
         collectionView.dataSource = self
         
+        
+        
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        if let product = productDetail {
+            pageControl.numberOfPages = product.allImages?.count ?? 0
+        }
+        else {
+            pageControl.numberOfPages = 0
+        }
+        
+        print("hey3 \(pageControl.numberOfPages )")
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -53,7 +75,9 @@ class ProductDetailTableViewCell: UITableViewCell, UICollectionViewDelegate, UIC
         
         return cell
     }
-    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        pageControl.currentPage = Int(scrollView.contentOffset.x / collectionView.frame.size.width)
+    }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         return cellSize
