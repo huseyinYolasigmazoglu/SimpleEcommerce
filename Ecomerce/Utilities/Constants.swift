@@ -11,7 +11,7 @@ import UIKit
 class Constants {
     
     static var productCellWith : CGFloat = 320
-    static var gotoDetailsSegue :String = "goToDetailSegue"
+    static var goToDetailFlowSegue :String = "goToDetailFlowSegue"
     
     static var ProductCell :String = "ProductCell"
     static var ProductDetailCell :String = "ProductDetailCell"

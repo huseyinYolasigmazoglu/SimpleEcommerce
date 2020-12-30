@@ -50,17 +50,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="p4s-hG-Fm0">
-                                <rect key="frame" x="0.0" y="161" width="414" height="701"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="7" minimumInteritemSpacing="10" id="AVl-Cz-lX5">
                                     <size key="itemSize" width="180" height="320"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="headerReferenceSize" width="50" height="97"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProductCell" id="2Il-G2-Osr" customClass="ProductViewCell" customModule="Ecomerce" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="0.0" width="180" height="320"/>
+                                        <rect key="frame" x="10" y="97" width="180" height="320"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="G5G-MU-vHM">
                                             <rect key="frame" x="0.0" y="0.0" width="180" height="320"/>
@@ -117,24 +117,45 @@ vvvvvvvv</string>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HeaderCollectionReusableView" id="uOE-gf-CiP" customClass="HeaderCollectionReusableView" customModule="Ecomerce" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="97"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="361 Item(s)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VVn-ug-ONk">
+                                            <rect key="frame" x="15" y="66.5" width="399" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Arrilvals" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B4E-Tw-xfW">
+                                            <rect key="frame" x="20" y="10" width="394" height="43"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <viewLayoutGuide key="safeArea" id="t1I-YM-51t"/>
+                                    <constraints>
+                                        <constraint firstItem="t1I-YM-51t" firstAttribute="bottom" secondItem="VVn-ug-ONk" secondAttribute="bottom" constant="10" id="2zs-J7-KcY"/>
+                                        <constraint firstItem="t1I-YM-51t" firstAttribute="trailing" secondItem="VVn-ug-ONk" secondAttribute="trailing" id="86d-14-xfi"/>
+                                        <constraint firstItem="B4E-Tw-xfW" firstAttribute="top" secondItem="t1I-YM-51t" secondAttribute="top" constant="10" id="HmI-B1-28c"/>
+                                        <constraint firstItem="t1I-YM-51t" firstAttribute="trailing" secondItem="B4E-Tw-xfW" secondAttribute="trailing" id="TFu-wi-npY"/>
+                                        <constraint firstItem="VVn-ug-ONk" firstAttribute="leading" secondItem="t1I-YM-51t" secondAttribute="leading" constant="15" id="deq-Rg-apK"/>
+                                        <constraint firstItem="B4E-Tw-xfW" firstAttribute="leading" secondItem="t1I-YM-51t" secondAttribute="leading" constant="20" id="mhJ-SC-78L"/>
+                                    </constraints>
+                                    <connections>
+                                        <outlet property="itemCount" destination="VVn-ug-ONk" id="9aY-eu-5tL"/>
+                                    </connections>
+                                </collectionReusableView>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Arrivals" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C5M-OJ-W2S">
-                                <rect key="frame" x="17" y="102" width="393" height="43"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="C5M-OJ-W2S" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="14" id="38J-fk-4Z4"/>
-                            <constraint firstItem="C5M-OJ-W2S" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="17" id="7CM-3a-F1m"/>
                             <constraint firstItem="p4s-hG-Fm0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8FL-r8-RkZ"/>
-                            <constraint firstItem="p4s-hG-Fm0" firstAttribute="top" secondItem="C5M-OJ-W2S" secondAttribute="bottom" constant="16" id="Du8-EK-oWK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="p4s-hG-Fm0" secondAttribute="bottom" id="Ek4-sR-xQ9"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="C5M-OJ-W2S" secondAttribute="trailing" constant="4" id="IYy-EE-f6d"/>
                             <constraint firstItem="p4s-hG-Fm0" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="VSV-KU-dLS"/>
+                            <constraint firstItem="p4s-hG-Fm0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="sd6-KW-73i"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="A2u-wu-ltl">
@@ -198,27 +219,14 @@ vvvvvvvv</string>
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kkv-eg-8aA">
-                                <rect key="frame" x="8" y="98" width="20" height="21.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="20" id="2mW-ff-jqM"/>
-                                    <constraint firstAttribute="height" constant="25" id="Vwf-fz-WRT"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="chevron.backward" catalog="system"/>
-                                <connections>
-                                    <action selector="closeView:" destination="FZ6-lr-AqV" eventType="touchUpInside" id="bdx-Qq-hwE"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Axk-9u-Z4j"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="hZY-v1-gdh" firstAttribute="leading" secondItem="Axk-9u-Z4j" secondAttribute="leading" id="70C-cy-St9"/>
                             <constraint firstItem="Axk-9u-Z4j" firstAttribute="trailing" secondItem="hZY-v1-gdh" secondAttribute="trailing" id="9Sa-mX-Ea0"/>
-                            <constraint firstItem="kkv-eg-8aA" firstAttribute="leading" secondItem="Axk-9u-Z4j" secondAttribute="leading" constant="8" id="egk-zA-kpc"/>
                             <constraint firstItem="Axk-9u-Z4j" firstAttribute="bottom" secondItem="hZY-v1-gdh" secondAttribute="bottom" id="fQe-fU-EEH"/>
                             <constraint firstItem="hZY-v1-gdh" firstAttribute="top" secondItem="Axk-9u-Z4j" secondAttribute="top" id="sCY-c6-4ju"/>
-                            <constraint firstItem="kkv-eg-8aA" firstAttribute="top" secondItem="Axk-9u-Z4j" secondAttribute="top" constant="8" id="zAW-lS-WDo"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="iXs-Tm-bb9"/>
@@ -228,7 +236,7 @@ vvvvvvvv</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="USM-8z-AEv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1914" y="210"/>
+            <point key="canvasLocation" x="1913.0434782608697" y="209.59821428571428"/>
         </scene>
         <!--Product Detail View Controller-->
         <scene sceneID="Awv-Wd-sSA">
@@ -389,7 +397,6 @@ vvvvvvvv</string>
         </scene>
     </scenes>
     <resources>
-        <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -21,34 +21,26 @@ class MainViewController: UIViewController {
         
         collectionViewCellWidth = (self.view.frame.width) / 2 - 15
         
+        
         collectionView.dataSource = self
         collectionView.delegate = self
         manager.delegate = self
         
         manager.getProducts()
-        
     }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if let identifier = segue.identifier {
-            if identifier == Constants.gotoDetailsSegue
-            {
-                if let destinationViewController = segue.destination as? ProductDetailViewController {
-                    
-                    if let index = sender as? IndexPath {
-                        
-                        destinationViewController.loadProductDetails(product: manager.getProduct(index.row))
-                    }
-                }
-            }
-            else if identifier == "goToDetailFlowSegue"
+            
+            if identifier == Constants.goToDetailFlowSegue
             {
                 if let destinationViewController = segue.destination as? DetailTableViewController {
                     
                     if let index = sender as? IndexPath {
                         
                         destinationViewController.product = manager.getProduct(index.row)
-                        
                     }
                 }
             }
@@ -61,9 +53,8 @@ extension MainViewController : UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        //performSegue(withIdentifier: Constants.gotoDetailsSegue, sender: indexPath)
         
-        performSegue(withIdentifier: "goToDetailFlowSegue", sender: indexPath)
+        performSegue(withIdentifier: Constants.goToDetailFlowSegue, sender: indexPath)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -81,6 +72,14 @@ extension MainViewController : UICollectionViewDataSource{
         
         return cell   
     }
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        let cell = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderCollectionReusableView.identifier, for: indexPath)
+        
+        return cell
+    }
+    
+    
 }
 
 //MARK: - UICollectionView extensions - FlowLayout

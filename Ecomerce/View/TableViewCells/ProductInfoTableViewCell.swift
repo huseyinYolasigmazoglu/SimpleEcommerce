@@ -42,4 +42,11 @@ class ProductInfoTableViewCell: UITableViewCell {
             self.productId.text =   "Product  no: \(detail.prodid ?? "")"
         }
     }
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        
+        
+    }
+    override func setHighlighted(_ highlighted: Bool, animated: Bool){
+    
+    }
 }
