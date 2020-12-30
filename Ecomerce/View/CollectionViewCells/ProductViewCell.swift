@@ -16,6 +16,15 @@ class ProductViewCell: UICollectionViewCell {
     
     @IBOutlet private weak var productCost: UILabel!
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        //reset all
+        productName.text = ""
+        productMainImage.image = nil
+        productCost.text = ""
+    }
+    
     func setProduct(product:Product?)  {
         
         if let _product = product {
@@ -26,15 +35,6 @@ class ProductViewCell: UICollectionViewCell {
             
             setProductCost(cost: _product.cost ?? "")
         }  
-    }
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        
-        //reset all
-        productName.text = ""
-        productMainImage.image = nil
-        productCost.text = ""
     }
     
     func setProductImage(urlLink: String) {

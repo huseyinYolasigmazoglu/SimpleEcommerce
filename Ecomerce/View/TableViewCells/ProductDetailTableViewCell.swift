@@ -18,10 +18,11 @@ extension ProductDetailTableViewCell {
     }
 }
 
-class ProductDetailTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
+//MARK: -ProductDetailTableViewCell Main class
+class ProductDetailTableViewCell: UITableViewCell {
     
     @IBOutlet private var collectionView: UICollectionView!
-    @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet private weak var pageControl: UIPageControl!
     
     private var currentPageControlIndex = 0
     
@@ -37,8 +38,6 @@ class ProductDetailTableViewCell: UITableViewCell, UICollectionViewDelegate, UIC
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        
-        
     }
     
     override func layoutSubviews() {
@@ -50,14 +49,11 @@ class ProductDetailTableViewCell: UITableViewCell, UICollectionViewDelegate, UIC
         else {
             pageControl.numberOfPages = 0
         }
-        
-        print("hey3 \(pageControl.numberOfPages )")
     }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-    }
+}
+
+//MARK: -UICollectionView functions
+extension ProductDetailTableViewCell : UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         

@@ -46,7 +46,7 @@ class MainViewController: UIViewController {
                 if let destinationViewController = segue.destination as? DetailTableViewController {
                     
                     if let index = sender as? IndexPath {
-                         
+                        
                         destinationViewController.product = manager.getProduct(index.row)
                         
                     }

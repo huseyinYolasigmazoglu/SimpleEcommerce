@@ -150,6 +150,7 @@
 		528C056525961C9300E0372C /* Ecomerce */ = {
 			isa = PBXGroup;
 			children = (
+				52BE0266259CE15200EC30A8 /* UnUsed */,
 				528C056625961C9300E0372C /* AppDelegate.swift */,
 				528C056825961C9300E0372C /* SceneDelegate.swift */,
 				528C057425961C9400E0372C /* Info.plist */,
@@ -195,7 +196,6 @@
 			isa = PBXGroup;
 			children = (
 				529CDCC82596259A00E1A894 /* MainViewController.swift */,
-				523683072597763F004D0793 /* ProductDetailViewController.swift */,
 				5236835C25989744004D0793 /* FilterViewController.swift */,
 				52D4C831259A5E8300191EA3 /* DetailTableViewController.swift */,
 			);
@@ -220,11 +220,19 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		52BE0266259CE15200EC30A8 /* UnUsed */ = {
+			isa = PBXGroup;
+			children = (
+				523683072597763F004D0793 /* ProductDetailViewController.swift */,
+				5236830C25979446004D0793 /* ProductDetailViewCell.swift */,
+			);
+			path = UnUsed;
+			sourceTree = "<group>";
+		};
 		52D4C81E259A5D0C00191EA3 /* CollectionViewCells */ = {
 			isa = PBXGroup;
 			children = (
 				529CDCF925967BEB00E1A894 /* ProductViewCell.swift */,
-				5236830C25979446004D0793 /* ProductDetailViewCell.swift */,
 				52D4C82A259A5DCC00191EA3 /* ImageCollectionViewCell.swift */,
 				52D4C82B259A5DCC00191EA3 /* ImageCollectionViewCell.xib */,
 			);

@@ -8,8 +8,8 @@
 import UIKit
 import SDWebImage
 
-class ImageCollectionViewCell: UICollectionViewCell {
-    
+//MARK: -Static methods and variables
+extension ImageCollectionViewCell{
     
     static let identifier = "ImageCollectionViewCell"
     
@@ -17,6 +17,9 @@ class ImageCollectionViewCell: UICollectionViewCell {
     {
         return UINib(nibName: "ImageCollectionViewCell", bundle: nil)
     }
+}
+
+class ImageCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet private weak var productImage: UIImageView!
     
