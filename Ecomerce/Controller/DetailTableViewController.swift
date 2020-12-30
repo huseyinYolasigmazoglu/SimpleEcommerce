@@ -7,19 +7,14 @@
 
 import UIKit
 
-class DetailTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
-    
-    @IBAction func close(_ sender: UIButton) {
-        
-        navigationController?.popViewController(animated: true)
-    }
+
+class DetailTableViewController: UIViewController, UITableViewDelegate {
     
     
     @IBOutlet weak var flowTableView: UITableView!
     
     var product : Product?
-    var productImageSize : CGSize = CGSize(width: 100, height: 100)
+    var productImageGallerySize : CGSize = CGSize(width: 100, height: 100)
     
     override func viewDidLoad() {
         
@@ -30,12 +25,9 @@ class DetailTableViewController: UIViewController, UITableViewDelegate, UITableV
         
         flowTableView.register(ProductDetailTableViewCell.nib(), forCellReuseIdentifier: ProductDetailTableViewCell.identifier)
         
-        
-        
         flowTableView.register(ProductInfoTableViewCell.nib(), forCellReuseIdentifier: ProductInfoTableViewCell.identifier)
         
-        
-        productImageSize = CGSize(width: self.view.frame.width, height: self.view.frame.height / 2)
+        productImageGallerySize = CGSize(width: self.view.frame.width, height: self.view.frame.height / 2)
         
     }
     
@@ -47,50 +39,65 @@ class DetailTableViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        //navigationController?.isNavigationBarHidden = false
+        navigationController?.isNavigationBarHidden = false
     }
+    
+    @IBAction func closeView(_ sender: UIButton) {
+        
+        navigationController?.popViewController(animated: true)
+    }
+    
+    func cellForImageGallery(_ indexPath:IndexPath,withIdentifier:String) -> UITableViewCell {
+        
+        let cell = flowTableView.dequeueReusableCell(withIdentifier: ProductDetailTableViewCell.identifier, for: indexPath) as! ProductDetailTableViewCell
+        
+        cell.productDetail = self.product
+        cell.cellSize = productImageGallerySize
+        return cell
+        
+    }
+    
+    func cellForProductDetail(_ indexPath:IndexPath,withIdentifier:String) -> UITableViewCell{
+        
+        let cell = flowTableView.dequeueReusableCell(withIdentifier: ProductInfoTableViewCell.identifier, for: indexPath) as! ProductInfoTableViewCell
+        
+        cell.product = self.product
+        
+        return cell
+    }
+}
+
+
+extension DetailTableViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return 2
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        
-        if indexPath.row == 0 {
-            
-            let cell = flowTableView.dequeueReusableCell(withIdentifier: ProductDetailTableViewCell.identifier, for: indexPath) as! ProductDetailTableViewCell
-            
-            cell.productDetail = self.product
-            cell.cellSize = productImageSize
-            return cell
-        }
-        else if indexPath.row == 1 {
-            
-            let cell = flowTableView.dequeueReusableCell(withIdentifier: ProductInfoTableViewCell.identifier, for: indexPath) as! ProductInfoTableViewCell
-            
-            cell.product = self.product
-            
-            return cell
-        }
-        
-        else{
-            let cell  = UITableViewCell()
-            
-            return cell
-        }
-        
-    }
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        if indexPath.row == 0 {
-            return productImageSize.height
-        }
-        else {
+        switch indexPath.row {
+        case ProductDetailSections.ImageGallery.rawValue:
+            return productImageGallerySize.height
+        case ProductDetailSections.ProductDetail.rawValue:
             return ProductInfoTableViewCell.height
+        default:
+            return 50
         }
+        
     }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        switch indexPath.row {
+        case ProductDetailSections.ImageGallery.rawValue:
+            return cellForImageGallery(indexPath,withIdentifier: ProductDetailTableViewCell.identifier)
+        case ProductDetailSections.ProductDetail.rawValue:
+            return cellForProductDetail(indexPath, withIdentifier: ProductInfoTableViewCell.identifier)
+        default:
+            let cell  = UITableViewCell()
+            return cell
+        }
+    }
 }

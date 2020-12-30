@@ -206,7 +206,7 @@ vvvvvvvv</string>
                                 </constraints>
                                 <state key="normal" backgroundImage="chevron.backward" catalog="system"/>
                                 <connections>
-                                    <action selector="close:" destination="FZ6-lr-AqV" eventType="touchUpInside" id="bdx-Qq-hwE"/>
+                                    <action selector="closeView:" destination="FZ6-lr-AqV" eventType="touchUpInside" id="bdx-Qq-hwE"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -228,7 +228,7 @@ vvvvvvvv</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="USM-8z-AEv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1931.8840579710147" y="209.59821428571428"/>
+            <point key="canvasLocation" x="1914" y="210"/>
         </scene>
         <!--Product Detail View Controller-->
         <scene sceneID="Awv-Wd-sSA">

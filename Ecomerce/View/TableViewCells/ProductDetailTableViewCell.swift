@@ -30,7 +30,6 @@ class ProductDetailTableViewCell: UITableViewCell, UICollectionViewDelegate, UIC
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
