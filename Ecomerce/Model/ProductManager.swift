@@ -21,7 +21,7 @@ class ProductManager {
     private var endPointUrl :String
     private var mainImageUrlBase :String
     
-    public var delegate : ProductManagerDelegate?
+    var delegate : ProductManagerDelegate?
     
     
     //MARK: - Constructor
@@ -63,7 +63,7 @@ class ProductManager {
         }
     }
     
-    //MARK: - Public Functions
+    //MARK: - Functions
     func setUrl(with url:String)  {
         
         endPointUrl =  url.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""

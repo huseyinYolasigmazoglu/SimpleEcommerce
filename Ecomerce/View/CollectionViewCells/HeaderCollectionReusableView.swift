@@ -13,4 +13,10 @@ class HeaderCollectionReusableView: UICollectionReusableView {
     
     @IBOutlet weak var itemCount: UILabel!
     
+    func configure(productCount count: Int) {
+        
+        itemCount.text = "\(count) Items(s)"
+    }
+    
+    
 }
