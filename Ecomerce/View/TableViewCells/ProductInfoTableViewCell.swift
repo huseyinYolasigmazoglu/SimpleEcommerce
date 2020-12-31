@@ -40,6 +40,9 @@ class ProductInfoTableViewCell: UITableViewCell {
             if (newValue < 250) {
                 self._height = 300
             }
+            else{
+                self._height = newValue
+            }
         }
     }
     

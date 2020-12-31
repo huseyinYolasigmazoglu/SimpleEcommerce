@@ -27,7 +27,22 @@ class ProductDetailTableViewCell: UITableViewCell {
     private var currentPageControlIndex = 0
     
     var productDetail : Product?
-    var cellSize : CGSize = CGSize(width: 400, height: 400)
+    
+    var _cellSize : CGSize = CGSize(width: 400, height: 400)
+    var cellSize : CGSize {
+        get{
+            return _cellSize
+        }
+        set (newValue) {
+            
+            if (newValue.height < 300) {
+                _cellSize = CGSize(width: newValue.width, height: 300)
+            }
+            else{
+                _cellSize = CGSize(width: newValue.width, height: newValue.height)
+            }
+        }
+    }
     
     
     override func awakeFromNib() {

@@ -61,6 +61,7 @@ class DetailTableViewController: UIViewController, UITableViewDelegate {
         let cell = flowTableView.dequeueReusableCell(withIdentifier: ProductInfoTableViewCell.identifier, for: indexPath) as! ProductInfoTableViewCell
         
         cell.product = self.product
+        cell.height  = self.productDetailHeight
         
         return cell
     }
