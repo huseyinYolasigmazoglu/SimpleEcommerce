@@ -10,11 +10,12 @@ import UIKit
 
 class DetailTableViewController: UIViewController, UITableViewDelegate {
     
-    
     @IBOutlet weak var flowTableView: UITableView!
     
     var product : Product?
-    var productImageGallerySize : CGSize = CGSize(width: 100, height: 100)
+    
+    var productImageGallerySize : CGSize = CGSize(width: 400, height: 400)
+    var productDetailHeight : CGFloat = 400
     
     override func viewDidLoad() {
         
@@ -27,7 +28,15 @@ class DetailTableViewController: UIViewController, UITableViewDelegate {
         
         flowTableView.register(ProductInfoTableViewCell.nib(), forCellReuseIdentifier: ProductInfoTableViewCell.identifier)
         
-        productImageGallerySize = CGSize(width: self.view.frame.width, height: self.view.frame.height / 2)
+    }
+    //dynamic calculation of tableviewCells.
+    override func viewWillLayoutSubviews() {
+        
+        let halfOftheScreen = self.view.safeAreaLayoutGuide.layoutFrame.size.height / 2
+        
+        productDetailHeight = halfOftheScreen
+        
+        productImageGallerySize = CGSize(width: self.view.frame.width, height: halfOftheScreen)
         
     }
     
@@ -42,6 +51,7 @@ class DetailTableViewController: UIViewController, UITableViewDelegate {
         
         cell.productDetail = self.product
         cell.cellSize = productImageGallerySize
+        
         return cell
         
     }
@@ -54,10 +64,7 @@ class DetailTableViewController: UIViewController, UITableViewDelegate {
         
         return cell
     }
-    
-    
 }
-
 
 extension DetailTableViewController: UITableViewDataSource {
     
@@ -72,7 +79,7 @@ extension DetailTableViewController: UITableViewDataSource {
         case ProductDetailSections.ImageGallery.rawValue:
             return productImageGallerySize.height
         case ProductDetailSections.ProductDetail.rawValue:
-            return ProductInfoTableViewCell.height
+            return productDetailHeight
         default:
             return 50
         }

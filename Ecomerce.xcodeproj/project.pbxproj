@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		28ED6D5889281361D97B9F11 /* Pods_Ecomerce.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 639C6C771D83F8E30B6353FD /* Pods_Ecomerce.framework */; };
 		520EEEBE259D25E900151843 /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520EEEBD259D25E900151843 /* HeaderCollectionReusableView.swift */; };
+		52188A26259DBA3000CAA515 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52188A25259DBA3000CAA515 /* Common.swift */; };
 		523682F4259712B0004D0793 /* ProductManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523682F3259712B0004D0793 /* ProductManager.swift */; };
 		52368300259753C6004D0793 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523682FF259753C6004D0793 /* Constants.swift */; };
 		523683082597763F004D0793 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523683072597763F004D0793 /* ProductDetailViewController.swift */; };
@@ -55,6 +56,7 @@
 
 /* Begin PBXFileReference section */
 		520EEEBD259D25E900151843 /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		52188A25259DBA3000CAA515 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		523682F3259712B0004D0793 /* ProductManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductManager.swift; sourceTree = "<group>"; };
 		523682FF259753C6004D0793 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		523683072597763F004D0793 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				523682FF259753C6004D0793 /* Constants.swift */,
 				524C90192599262900DFEDEA /* Extensions.swift */,
 				52BE0261259C8AA000EC30A8 /* Enums.swift */,
+				52188A25259DBA3000CAA515 /* Common.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -462,6 +465,7 @@
 				528C056725961C9300E0372C /* AppDelegate.swift in Sources */,
 				52D4C82C259A5DCC00191EA3 /* ImageCollectionViewCell.swift in Sources */,
 				528C056925961C9300E0372C /* SceneDelegate.swift in Sources */,
+				52188A26259DBA3000CAA515 /* Common.swift in Sources */,
 				52D71509259B3C0600A8BD11 /* ProductInfoTableViewCell.swift in Sources */,
 				529CDCC92596259A00E1A894 /* MainViewController.swift in Sources */,
 				52368300259753C6004D0793 /* Constants.swift in Sources */,

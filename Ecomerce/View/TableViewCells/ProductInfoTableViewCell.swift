@@ -10,7 +10,7 @@ import UIKit
 //MARK: -Static methods and variables
 extension ProductInfoTableViewCell {
     
-    static let height : CGFloat = 336
+    static let height : CGFloat = 250
     
     static let identifier = "ProductInfoTableViewCell"
     
@@ -27,7 +27,21 @@ class ProductInfoTableViewCell: UITableViewCell {
     @IBOutlet private weak var productCost: UILabel!
     @IBOutlet private weak var productId: UILabel!
     
+    private var _height  : CGFloat = 300
+    
     var product : Product?
+    
+    var height   : CGFloat {
+        get{
+            return self._height
+        }
+        set (newValue) {
+            
+            if (newValue < 250) {
+                self._height = 300
+            }
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -47,6 +61,6 @@ class ProductInfoTableViewCell: UITableViewCell {
         
     }
     override func setHighlighted(_ highlighted: Bool, animated: Bool){
-    
+        
     }
 }
