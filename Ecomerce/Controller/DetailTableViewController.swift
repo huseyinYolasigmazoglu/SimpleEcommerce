@@ -10,7 +10,7 @@ import UIKit
 //MARK: -IBActions
 extension DetailTableViewController {
     
-    @IBAction func closeView(_ sender: UIButton) {
+    @IBAction private func closeView(_ sender: UIButton) {
         
         navigationController?.popViewController(animated: true)
     }

@@ -26,6 +26,7 @@ class MainViewController: UIViewController {
     private var  allProducts : ProductDetail?
     private var manager : ProductManager  =  ProductManager(endPoint: Constants.testUrl, imageUrl: Constants.mainImageUrlBase)
     
+    private var selectedSort = SortEnum.LowToHight
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +59,7 @@ class MainViewController: UIViewController {
                 if let destinationViewController = segue.destination as? FilterViewController {
                     
                     destinationViewController.delegate = self
+                    destinationViewController.selectedSortEnum = selectedSort
                 }
             }
         }
@@ -122,17 +124,17 @@ extension MainViewController : ProductManagerDelegate {
 //MARK: -FilterViewControllerDelegate  - sort
 extension MainViewController : FilterViewControllerDelegate {
     
-    func sort(_ filterDelegate: FilterViewController, sortCase: Int) {
+    func sort(_ filterDelegate: FilterViewController, sortCase: SortEnum) {
         
         switch sortCase {
-        case SortEnum.LowToHight.rawValue:
+        case SortEnum.LowToHight:
             self.allProducts?.Products.sort(by: { $0.costFloat ?? 0 < $1.costFloat ?? 0 })
-        case SortEnum.HighToLow.rawValue:
+            
+        case SortEnum.HighToLow:
             self.allProducts?.Products.sort(by: { $0.costFloat ?? 0 > $1.costFloat ?? 0 })
-        default:
-            self.allProducts?.Products.sort(by: { $0.costFloat ?? 0 < $1.costFloat ?? 0 })
+            
         }
-        
+        selectedSort = sortCase
         collectionView.reloadData()
         collectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
     }

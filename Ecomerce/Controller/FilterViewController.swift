@@ -11,26 +11,26 @@ import UIKit
 //MARK: -protocol
 protocol FilterViewControllerDelegate {
     
-    func sort(_ filterDelegate: FilterViewController,sortCase: Int)
+    func sort(_ filterDelegate: FilterViewController,sortCase: SortEnum)
 }
 
 //MARK: -IBActions
 extension FilterViewController {
     
-    @IBAction func clear(_ sender: Any) {
+    @IBAction private func clear(_ sender: Any) {
         
-        selectedSortIndex = SortEnum.LowToHight.rawValue
+        selectedSortEnum = SortEnum.LowToHight
         tableView.reloadData()
     }
     
-    @IBAction func dismissView(_ sender: UIBarButtonItem) {
+    @IBAction private func dismissView(_ sender: UIBarButtonItem) {
         
         self.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func apply(_ sender: UIButton) {
+    @IBAction private func apply(_ sender: UIButton) {
         
-        delegate?.sort(self, sortCase: selectedSortIndex)
+        delegate?.sort(self, sortCase: selectedSortEnum )
         self.dismiss(animated: true, completion: nil)
     }
 }
@@ -44,8 +44,9 @@ class FilterViewController: UIViewController {
     private var sortCases =
         ["Price - Low to High",
          "Price - Hight to Low"]
-    private var selectedSortIndex : Int = 0
     
+    var selectedSortIndex : Int = 0
+    var selectedSortEnum   = SortEnum.LowToHight
     var delegate : FilterViewControllerDelegate?
     
     
@@ -82,7 +83,7 @@ extension FilterViewController : UITableViewDelegate,UITableViewDataSource{
         
         cell.textLabel?.text = sortCases[indexPath.row]
         
-        if selectedSortIndex == indexPath.row {
+        if selectedSortEnum.rawValue == indexPath.row {
             cell.accessoryType = .checkmark
         }
         
@@ -92,6 +93,7 @@ extension FilterViewController : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         selectedSortIndex = indexPath.row
+        selectedSortEnum = SortEnum(rawValue: indexPath.row) ?? SortEnum.LowToHight
         tableView.reloadData()
     }
     
