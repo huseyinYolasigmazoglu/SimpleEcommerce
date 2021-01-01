@@ -9,10 +9,15 @@ import Foundation
 
 extension String {
     
-    func toTwoDigitFloat() -> String
+    func toTwoDigitFloatString() -> String
     {
         //replece to two digit float
         return String(format: "£%.2f", Float(self) ?? 0).replacingOccurrences(of: ".", with: ",")
+    }
+    
+    func toFloat() -> Float
+    {
+        return Float(self.replacingOccurrences(of: ",", with: ".")) ?? 0
     }
     
 }

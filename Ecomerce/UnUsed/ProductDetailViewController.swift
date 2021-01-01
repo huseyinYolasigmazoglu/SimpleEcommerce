@@ -33,7 +33,7 @@ class ProductDetailViewController: UIViewController, UICollectionViewDelegate {
         
         if let detail = product {
             self.productName.text = detail.name
-            self.productCost.text = detail.cost?.toTwoDigitFloat() ?? ""
+            self.productCost.text = detail.cost?.toTwoDigitFloatString() ?? ""
             self.productId.text =   "Product  no: \(detail.prodid ?? "")"
         }
     }

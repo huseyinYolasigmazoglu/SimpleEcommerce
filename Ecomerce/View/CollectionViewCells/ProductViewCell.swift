@@ -56,7 +56,7 @@ class ProductViewCell: UICollectionViewCell {
     func setProductCost(cost: String) {
         
         if cost != "" {
-            productCost.text = cost.toTwoDigitFloat()
+            productCost.text = cost.toTwoDigitFloatString()
         }
     }
     

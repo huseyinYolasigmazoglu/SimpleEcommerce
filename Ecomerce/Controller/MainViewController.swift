@@ -9,10 +9,19 @@ import UIKit
 
 class MainViewController: UIViewController {
     
+    
+    @IBAction func filter(_ sender: UIBarButtonItem) {
+        //goToSortSegue
+        
+        performSegue(withIdentifier: Constants.goToSortSegue, sender: self)
+    }
+    
     private var collectionViewCellWidth : CGFloat = 180
     private var  allProducts : ProductDetail?
     
     private var manager : ProductManager  =  ProductManager(endPoint: Constants.testUrl, imageUrl: Constants.mainImageUrlBase)
+    
+    
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -42,6 +51,13 @@ class MainViewController: UIViewController {
                         
                         destinationViewController.product = manager.getProduct(index.row)
                     }
+                }
+            }
+            else if identifier == Constants.goToSortSegue{
+                
+                if let destinationViewController = segue.destination as? FilterViewController {
+                    
+                    destinationViewController.delegate = self
                 }
             }
         }
@@ -102,4 +118,24 @@ extension MainViewController : ProductManagerDelegate {
         self.allProducts = allProducts
         collectionView.reloadData()
     }
+}
+
+//MARK: -FilterViewControllerDelegate  - sort
+extension MainViewController : FilterViewControllerDelegate {
+    
+    func sort(_ filterDelegate: FilterViewController, sortCase: Int) {
+        
+        switch sortCase {
+        case SortEnum.LowToHight.rawValue:
+            self.allProducts?.Products.sort(by: { $0.costFloat ?? 0 < $1.costFloat ?? 0 })
+        case SortEnum.HighToLow.rawValue:
+            self.allProducts?.Products.sort(by: { $0.costFloat ?? 0 > $1.costFloat ?? 0 })
+        default:
+            self.allProducts?.Products.sort(by: { $0.costFloat ?? 0 < $1.costFloat ?? 0 })
+        }
+        
+        collectionView.reloadData()
+        collectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+    }
+    
 }

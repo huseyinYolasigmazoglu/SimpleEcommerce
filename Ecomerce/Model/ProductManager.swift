@@ -41,6 +41,17 @@ class ProductManager {
         }
     }
     
+    private func productsFirstExtend()  {
+        if let products = self.allProducts?.Products
+        {
+            for item in products {
+                
+                item.costFloat = item.cost?.toFloat()
+                setImgLocation(product: item)
+            }
+        }
+    }
+    
     private func setImgLocation(product:Product?) {
         
         if let prdct = product
@@ -82,7 +93,7 @@ class ProductManager {
                 if let all = products{
                     
                     self.allProducts = all
-                    //self.setAllMainImages()
+                    self.productsFirstExtend()
                     self.delegate?.loadData(self, allProducts: all)
                 }
             }
@@ -120,9 +131,8 @@ class ProductManager {
         if let result = self.allProducts?.Products[index]
         {
             product = result
-            setImgLocation(product: product)
+            //setImgLocation(product: product)
         }
-        
         return product
     }
 }

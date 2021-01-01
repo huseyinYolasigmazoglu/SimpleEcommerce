@@ -11,3 +11,8 @@ enum ProductDetailSections:Int {
     case ImageGallery
     case ProductDetail
 }
+
+enum SortEnum : Int {
+    case LowToHight
+    case HighToLow
+}

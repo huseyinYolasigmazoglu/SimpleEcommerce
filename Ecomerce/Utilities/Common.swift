@@ -25,8 +25,4 @@ class Common {
             return 0
         }
     }    
-    public static func getStatusBarHeight() -> CGFloat {
-        
-        return UIApplication.shared.statusBarFrame.size.height
-    }
 }
