@@ -5,31 +5,32 @@
 //  Created by Huseyin Yolasigmazoglu on 25.12.2020.
 //
 
-import UIKit 
+import UIKit
 
-class MainViewController: UIViewController {
-    
+//MARK: - IBActions
+extension MainViewController {
     
     @IBAction func filter(_ sender: UIBarButtonItem) {
         //goToSortSegue
         
         performSegue(withIdentifier: Constants.goToSortSegue, sender: self)
     }
+}
+
+//MARK: - Main MainViewController
+class MainViewController: UIViewController {
+    
+    @IBOutlet private weak var collectionView: UICollectionView!
     
     private var collectionViewCellWidth : CGFloat = 180
     private var  allProducts : ProductDetail?
-    
     private var manager : ProductManager  =  ProductManager(endPoint: Constants.testUrl, imageUrl: Constants.mainImageUrlBase)
     
-    
-    
-    @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         collectionViewCellWidth = (self.view.frame.width) / 2 - 15
-        
         
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -37,7 +38,6 @@ class MainViewController: UIViewController {
         
         manager.getProducts()
     }
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -80,7 +80,6 @@ extension MainViewController : UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.ProductCell, for: indexPath) as! ProductViewCell
         
         
@@ -88,6 +87,7 @@ extension MainViewController : UICollectionViewDataSource{
         
         return cell   
     }
+    //for header
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         let cell = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderCollectionReusableView.identifier, for: indexPath) as! HeaderCollectionReusableView
@@ -96,7 +96,6 @@ extension MainViewController : UICollectionViewDataSource{
         
         return cell
     }
-    
     
 }
 
@@ -110,7 +109,7 @@ extension MainViewController : UICollectionViewDelegateFlowLayout{
     
 }
 
-//MARK: -ManagerDelegate
+//MARK: -ManagerDelegate - loadData
 extension MainViewController : ProductManagerDelegate {
     
     func loadData(_ productManagerDelegate: ProductManager, allProducts: ProductDetail?) {

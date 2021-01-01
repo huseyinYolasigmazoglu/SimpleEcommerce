@@ -16,7 +16,7 @@ class ProductDetail: Codable {
 class Product: Codable {
     public var name:String?
     public var cost:String?
-    public var costFloat:Float?
+    public var costFloat:Float? //to be able to sort 
     public var prodid:String?
     public var altImage:String?
     public var allImages:[String]?

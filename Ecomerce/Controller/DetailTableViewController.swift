@@ -7,15 +7,24 @@
 
 import UIKit
 
+//MARK: -IBActions
+extension DetailTableViewController {
+    
+    @IBAction func closeView(_ sender: UIButton) {
+        
+        navigationController?.popViewController(animated: true)
+    }
+}
 
+//MARK: -Main DetailTableViewController
 class DetailTableViewController: UIViewController, UITableViewDelegate {
     
-    @IBOutlet weak var flowTableView: UITableView!
+    @IBOutlet private weak var flowTableView: UITableView!
+    
+    private var productImageGallerySize : CGSize = CGSize(width: 400, height: 400)
+    private var productDetailHeight : CGFloat = 400
     
     var product : Product?
-    
-    var productImageGallerySize : CGSize = CGSize(width: 400, height: 400)
-    var productDetailHeight : CGFloat = 400
     
     override func viewDidLoad() {
         
@@ -40,11 +49,6 @@ class DetailTableViewController: UIViewController, UITableViewDelegate {
         
     }
     
-    @IBAction func closeView(_ sender: UIButton) {
-        
-        navigationController?.popViewController(animated: true)
-    }
-    
     func cellForImageGallery(_ indexPath:IndexPath,withIdentifier:String) -> UITableViewCell {
         
         let cell = flowTableView.dequeueReusableCell(withIdentifier: ProductDetailTableViewCell.identifier, for: indexPath) as! ProductDetailTableViewCell
@@ -67,10 +71,10 @@ class DetailTableViewController: UIViewController, UITableViewDelegate {
     }
 }
 
+//MARK: -UITableViewDataSource
 extension DetailTableViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return 2
     }
     
@@ -84,7 +88,6 @@ extension DetailTableViewController: UITableViewDataSource {
         default:
             return 50
         }
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

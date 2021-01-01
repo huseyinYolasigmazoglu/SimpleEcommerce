@@ -12,8 +12,6 @@
 		52188A26259DBA3000CAA515 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52188A25259DBA3000CAA515 /* Common.swift */; };
 		523682F4259712B0004D0793 /* ProductManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523682F3259712B0004D0793 /* ProductManager.swift */; };
 		52368300259753C6004D0793 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523682FF259753C6004D0793 /* Constants.swift */; };
-		523683082597763F004D0793 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523683072597763F004D0793 /* ProductDetailViewController.swift */; };
-		5236830D25979446004D0793 /* ProductDetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5236830C25979446004D0793 /* ProductDetailViewCell.swift */; };
 		5236835D25989744004D0793 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5236835C25989744004D0793 /* FilterViewController.swift */; };
 		524C901A2599262900DFEDEA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524C90192599262900DFEDEA /* Extensions.swift */; };
 		528C056725961C9300E0372C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528C056625961C9300E0372C /* AppDelegate.swift */; };
@@ -59,8 +57,6 @@
 		52188A25259DBA3000CAA515 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		523682F3259712B0004D0793 /* ProductManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductManager.swift; sourceTree = "<group>"; };
 		523682FF259753C6004D0793 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		523683072597763F004D0793 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
-		5236830C25979446004D0793 /* ProductDetailViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewCell.swift; sourceTree = "<group>"; };
 		5236835C25989744004D0793 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		524C90192599262900DFEDEA /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		528C056325961C9300E0372C /* Ecomerce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ecomerce.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,7 +151,6 @@
 		528C056525961C9300E0372C /* Ecomerce */ = {
 			isa = PBXGroup;
 			children = (
-				52BE0266259CE15200EC30A8 /* UnUsed */,
 				528C056625961C9300E0372C /* AppDelegate.swift */,
 				528C056825961C9300E0372C /* SceneDelegate.swift */,
 				528C057425961C9400E0372C /* Info.plist */,
@@ -223,15 +218,6 @@
 				528C056C25961C9300E0372C /* Main.storyboard */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		52BE0266259CE15200EC30A8 /* UnUsed */ = {
-			isa = PBXGroup;
-			children = (
-				523683072597763F004D0793 /* ProductDetailViewController.swift */,
-				5236830C25979446004D0793 /* ProductDetailViewCell.swift */,
-			);
-			path = UnUsed;
 			sourceTree = "<group>";
 		};
 		52D4C81E259A5D0C00191EA3 /* CollectionViewCells */ = {
@@ -453,13 +439,11 @@
 				529CDCBD2596228800E1A894 /* ProductDetail.swift in Sources */,
 				52D4C822259A5D7C00191EA3 /* ProductDetailTableViewCell.swift in Sources */,
 				529CDCCF2596278A00E1A894 /* ApiOperations.swift in Sources */,
-				523683082597763F004D0793 /* ProductDetailViewController.swift in Sources */,
 				523682F4259712B0004D0793 /* ProductManager.swift in Sources */,
 				52BE0262259C8AA000EC30A8 /* Enums.swift in Sources */,
 				529CDCFA25967BEB00E1A894 /* ProductViewCell.swift in Sources */,
 				52D4C832259A5E8300191EA3 /* DetailTableViewController.swift in Sources */,
 				5236835D25989744004D0793 /* FilterViewController.swift in Sources */,
-				5236830D25979446004D0793 /* ProductDetailViewCell.swift in Sources */,
 				520EEEBE259D25E900151843 /* HeaderCollectionReusableView.swift in Sources */,
 				524C901A2599262900DFEDEA /* Extensions.swift in Sources */,
 				528C056725961C9300E0372C /* AppDelegate.swift in Sources */,

@@ -7,6 +7,7 @@
 
 import Foundation
 
+//MARK: - protocol
 protocol ProductManagerDelegate {
     
     func loadData(_ productManagerDelegate: ProductManager,allProducts: ProductDetail? )
@@ -21,6 +22,7 @@ class ProductManager {
     private var endPointUrl :String
     private var mainImageUrlBase :String
     
+    //MARK: -  variables
     var delegate : ProductManagerDelegate?
     
     
@@ -63,7 +65,6 @@ class ProductManager {
             }
         }
     }
-    
     private func findMainImage(id:String) -> String  {
         
         if id.isEmpty {

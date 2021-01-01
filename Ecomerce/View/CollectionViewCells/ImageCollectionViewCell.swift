@@ -19,6 +19,7 @@ extension ImageCollectionViewCell{
     }
 }
 
+//MARK: -Main ImageCollectionViewCell
 class ImageCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet private weak var productImage: UIImageView!
@@ -35,6 +36,7 @@ class ImageCollectionViewCell: UICollectionViewCell {
             productImage.sd_setImage(with: imageUrl)
         }
     }
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         

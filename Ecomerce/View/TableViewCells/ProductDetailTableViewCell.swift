@@ -16,6 +16,10 @@ extension ProductDetailTableViewCell {
     {
         return UINib(nibName: "ProductDetailTableViewCell", bundle: nil)
     }
+    
+    static let minCellWidth  : CGFloat  = 300
+    static let minCellHeight : CGFloat  = 300
+    
 }
 
 //MARK: -ProductDetailTableViewCell Main class
@@ -25,25 +29,24 @@ class ProductDetailTableViewCell: UITableViewCell {
     @IBOutlet private weak var pageControl: UIPageControl!
     
     private var currentPageControlIndex = 0
+    private var _cellSize : CGSize = CGSize(width: ProductDetailTableViewCell.minCellWidth, height: ProductDetailTableViewCell.minCellHeight)
     
     var productDetail : Product?
     
-    var _cellSize : CGSize = CGSize(width: 400, height: 400)
     var cellSize : CGSize {
         get{
             return _cellSize
         }
         set (newValue) {
             
-            if (newValue.height < 300) {
-                _cellSize = CGSize(width: newValue.width, height: 300)
+            if (newValue.height < ProductDetailTableViewCell.minCellHeight) {
+                _cellSize = CGSize(width: newValue.width, height: ProductDetailTableViewCell.minCellHeight)
             }
             else{
                 _cellSize = CGSize(width: newValue.width, height: newValue.height)
             }
         }
     }
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()

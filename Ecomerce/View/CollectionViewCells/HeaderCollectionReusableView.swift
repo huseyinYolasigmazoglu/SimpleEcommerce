@@ -17,6 +17,4 @@ class HeaderCollectionReusableView: UICollectionReusableView {
         
         itemCount.text = "\(count) Items(s)"
     }
-    
-    
 }
