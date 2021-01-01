@@ -3,7 +3,7 @@
 //  Ecomerce
 //
 //  Created by Huseyin Yolasigmazoglu on 28.12.2020.
-//
+// This is the image Slider , the first tableviewCell of DetailTableViewController , for each image create ImageCollectionViewCell to create image slider.
 
 import UIKit
 
