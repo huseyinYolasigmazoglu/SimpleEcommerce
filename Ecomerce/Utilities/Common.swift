@@ -17,7 +17,7 @@ class Common {
             if controller.isNavigationBarHidden == true {
                 return 0
             }
-            else{
+            else {
                 return controller.navigationBar.frame.size.height
             }
         }

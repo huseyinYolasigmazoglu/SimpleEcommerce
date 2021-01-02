@@ -12,8 +12,7 @@ extension ProductDetailTableViewCell {
     
     static let identifier = "ProductDetailTableViewCell"
     
-    static func nib() -> UINib
-    {
+    static func nib() -> UINib {
         return UINib(nibName: "ProductDetailTableViewCell", bundle: nil)
     }
     
@@ -34,7 +33,7 @@ class ProductDetailTableViewCell: UITableViewCell {
     var productDetail : Product?
     
     var cellSize : CGSize {
-        get{
+        get {
             return _cellSize
         }
         set (newValue) {
@@ -42,7 +41,7 @@ class ProductDetailTableViewCell: UITableViewCell {
             if (newValue.height < ProductDetailTableViewCell.minCellHeight) {
                 _cellSize = CGSize(width: newValue.width, height: ProductDetailTableViewCell.minCellHeight)
             }
-            else{
+            else {
                 _cellSize = CGSize(width: newValue.width, height: newValue.height)
             }
         }
@@ -82,7 +81,7 @@ extension ProductDetailTableViewCell : UICollectionViewDelegate, UICollectionVie
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCollectionViewCell.identifier, for: indexPath) as! ImageCollectionViewCell
         
-        if let detail = self.productDetail{
+        if let detail = self.productDetail {
             
             cell.setProductImage(urlLink: detail.allImages?[indexPath.row] ?? "" )
         }

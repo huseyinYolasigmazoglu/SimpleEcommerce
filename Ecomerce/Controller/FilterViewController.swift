@@ -19,7 +19,7 @@ extension FilterViewController {
     
     @IBAction private func clear(_ sender: Any) {
         
-        selectedSortEnum = SortEnum.LowToHight
+        selectedSortEnum = SortEnum.lowToHigh
         tableView.reloadData()
     }
     
@@ -46,7 +46,7 @@ class FilterViewController: UIViewController {
          "Price - Hight to Low"]
     
     var selectedSortIndex : Int = 0
-    var selectedSortEnum   = SortEnum.LowToHight
+    var selectedSortEnum   = SortEnum.lowToHigh
     var delegate : FilterViewControllerDelegate?
     
     
@@ -59,7 +59,7 @@ class FilterViewController: UIViewController {
         tableView.delegate = self
         
     }
-    private func configureApplyButton(){
+    private func configureApplyButton() {
         
         applyButton.layer.borderWidth = 3
         applyButton.layer.borderColor = UIColor.black.cgColor
@@ -69,7 +69,7 @@ class FilterViewController: UIViewController {
 }
 
 //MARK: -UITableViewDelegate,UITableViewDataSource
-extension FilterViewController : UITableViewDelegate,UITableViewDataSource{
+extension FilterViewController : UITableViewDelegate,UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -93,9 +93,8 @@ extension FilterViewController : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         selectedSortIndex = indexPath.row
-        selectedSortEnum = SortEnum(rawValue: indexPath.row) ?? SortEnum.LowToHight
+        selectedSortEnum = SortEnum(rawValue: indexPath.row) ?? SortEnum.lowToHigh
         tableView.reloadData()
     }
-    
     
 }

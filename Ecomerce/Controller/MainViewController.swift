@@ -30,7 +30,7 @@ class MainViewController: UIViewController {
     private var  allProducts : ProductDetail?
     private var manager : ProductManager  =  ProductManager(endPoint: Constants.testUrl, imageUrl: Constants.mainImageUrlBase)
     
-    private var selectedSort = SortEnum.LowToHight
+    private var selectedSort = SortEnum.lowToHigh
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,8 +51,7 @@ class MainViewController: UIViewController {
         
         if let identifier = segue.identifier {
             
-            if identifier == Constants.goToDetailFlowSegue
-            {
+            if identifier == Constants.goToDetailFlowSegue {
                 if let destinationViewController = segue.destination as? DetailTableViewController {
                     
                     if let index = sender as? IndexPath {
@@ -61,7 +60,7 @@ class MainViewController: UIViewController {
                     }
                 }
             }
-            else if identifier == Constants.goToSortSegue{
+            else if identifier == Constants.goToSortSegue {
                 
                 if let destinationViewController = segue.destination as? FilterViewController {
                     
@@ -74,10 +73,9 @@ class MainViewController: UIViewController {
 }
 
 //MARK: - UICollectionView extensions - DataSource
-extension MainViewController : UICollectionViewDataSource{
+extension MainViewController : UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         
         performSegue(withIdentifier: Constants.goToDetailFlowSegue, sender: indexPath)
     }
@@ -111,8 +109,7 @@ extension MainViewController : UICollectionViewDataSource{
 //MARK: - UICollectionView extensions - FlowLayout
 extension MainViewController : UICollectionViewDelegateFlowLayout{
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
-    {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionViewCellWidth, height: Constants.productCellWith)
     }
     
@@ -136,10 +133,10 @@ extension MainViewController : FilterViewControllerDelegate {
     func sort(_ filterDelegate: FilterViewController, sortCase: SortEnum) {
         
         switch sortCase {
-        case SortEnum.LowToHight:
+        case SortEnum.lowToHigh:
             self.allProducts?.Products.sort(by: { $0.costFloat ?? 0 < $1.costFloat ?? 0 })
             
-        case SortEnum.HighToLow:
+        case SortEnum.highToLow:
             self.allProducts?.Products.sort(by: { $0.costFloat ?? 0 > $1.costFloat ?? 0 })
             
         }

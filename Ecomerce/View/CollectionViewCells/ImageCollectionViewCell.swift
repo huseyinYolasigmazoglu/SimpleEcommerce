@@ -9,12 +9,11 @@ import UIKit
 import SDWebImage
 
 //MARK: -Static methods and variables
-extension ImageCollectionViewCell{
+extension ImageCollectionViewCell {
     
     static let identifier = "ImageCollectionViewCell"
     
-    static func nib() -> UINib
-    {
+    static func nib() -> UINib {
         return UINib(nibName: "ImageCollectionViewCell", bundle: nil)
     }
 }

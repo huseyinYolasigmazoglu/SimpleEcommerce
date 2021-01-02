@@ -14,8 +14,7 @@ extension ProductInfoTableViewCell {
     
     static let identifier = "ProductInfoTableViewCell"
     
-    static func nib() -> UINib
-    {
+    static func nib() -> UINib {
         return UINib(nibName: "ProductInfoTableViewCell", bundle: nil)
     }
 }
@@ -32,7 +31,7 @@ class ProductInfoTableViewCell: UITableViewCell {
     var product : Product?
     
     var height   : CGFloat {
-        get{
+        get {
             return self._height
         }
         set (newValue) {
@@ -40,7 +39,7 @@ class ProductInfoTableViewCell: UITableViewCell {
             if (newValue < 300) {
                 self._height = 300
             }
-            else{
+            else {
                 self._height = newValue
             }
         }

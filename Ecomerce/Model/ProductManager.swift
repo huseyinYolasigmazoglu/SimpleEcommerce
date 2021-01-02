@@ -34,9 +34,8 @@ class ProductManager {
     }
     
     //MARK: - Private Functions
-    private func setAllMainImages()  {
-        if let products = self.allProducts?.Products
-        {
+    private func setAllMainImages() {
+        if let products = self.allProducts?.Products {
             for item in products {
                 setImgLocation(product: item)
             }
@@ -44,8 +43,7 @@ class ProductManager {
     }
     
     private func productsFirstExtend()  {
-        if let products = self.allProducts?.Products
-        {
+        if let products = self.allProducts?.Products {
             for item in products {
                 
                 item.costFloat = item.cost?.toFloat()
@@ -56,8 +54,7 @@ class ProductManager {
     
     private func setImgLocation(product:Product?) {
         
-        if let prdct = product
-        {
+        if let prdct = product {
             let image = prdct.mainImage ?? ""
             
             if image.isEmpty {
@@ -70,7 +67,7 @@ class ProductManager {
         if id.isEmpty {
             return ""
         }
-        else{
+        else {
             return mainImageUrlBase + id + "_main"
         }
     }
@@ -101,36 +98,33 @@ class ProductManager {
         }
     }
     
-    func getProductName(_ index:Int) -> String{
+    func getProductName(_ index:Int) -> String {
         
         var name = ""
         
-        if let product = self.allProducts?.Products[index]
-        {
+        if let product = self.allProducts?.Products[index] {
             name = product.name ?? ""
         }
         
         return name
     }
     
-    func getProductPrice(_ index:Int) -> String{
+    func getProductPrice(_ index:Int) -> String {
         
         var cost = ""
         
-        if let product = self.allProducts?.Products[index]
-        {
+        if let product = self.allProducts?.Products[index] {
             cost = product.cost ?? ""
         }
         
         return cost
     }
     
-    func getProduct(_ index:Int) -> Product?{
+    func getProduct(_ index:Int) -> Product? {
         
         var product : Product? = nil
         
-        if let result = self.allProducts?.Products[index]
-        {
+        if let result = self.allProducts?.Products[index] {
             product = result
             //setImgLocation(product: product)
         }

@@ -8,11 +8,11 @@
 import Foundation
 
 enum ProductDetailSections:Int {
-    case ImageGallery
-    case ProductDetail
+    case imageGallery
+    case productDetail
 }
 
 enum SortEnum : Int {
-    case LowToHight
-    case HighToLow
+    case lowToHigh
+    case highToLow
 }

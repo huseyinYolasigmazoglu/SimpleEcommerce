@@ -60,7 +60,7 @@ class DetailTableViewController: UIViewController, UITableViewDelegate {
         
     }
     
-    func cellForProductDetail(_ indexPath:IndexPath,withIdentifier:String) -> UITableViewCell{
+    func cellForProductDetail(_ indexPath:IndexPath,withIdentifier:String) -> UITableViewCell {
         
         let cell = flowTableView.dequeueReusableCell(withIdentifier: ProductInfoTableViewCell.identifier, for: indexPath) as! ProductInfoTableViewCell
         
@@ -81,9 +81,9 @@ extension DetailTableViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         switch indexPath.row {
-        case ProductDetailSections.ImageGallery.rawValue:
+        case ProductDetailSections.imageGallery.rawValue:
             return productImageGallerySize.height
-        case ProductDetailSections.ProductDetail.rawValue:
+        case ProductDetailSections.productDetail.rawValue:
             return productDetailHeight
         default:
             return 50
@@ -93,9 +93,9 @@ extension DetailTableViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         switch indexPath.row {
-        case ProductDetailSections.ImageGallery.rawValue:
+        case ProductDetailSections.imageGallery.rawValue:
             return cellForImageGallery(indexPath,withIdentifier: ProductDetailTableViewCell.identifier)
-        case ProductDetailSections.ProductDetail.rawValue:
+        case ProductDetailSections.productDetail.rawValue:
             return cellForProductDetail(indexPath, withIdentifier: ProductInfoTableViewCell.identifier)
         default:
             let cell  = UITableViewCell()
