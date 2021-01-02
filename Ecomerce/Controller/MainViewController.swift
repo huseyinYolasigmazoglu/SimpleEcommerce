@@ -20,6 +20,10 @@ extension MainViewController {
 //MARK: - Main MainViewController
 class MainViewController: UIViewController {
     
+    
+    @IBOutlet private weak var activitiIndicator: UIActivityIndicatorView!
+    
+    
     @IBOutlet private weak var collectionView: UICollectionView!
     
     private var collectionViewCellWidth : CGFloat = 180
@@ -30,6 +34,9 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        activitiIndicator.startAnimating()
+        activitiIndicator.hidesWhenStopped = true
         
         collectionViewCellWidth = (self.view.frame.width) / 2 - 15
         
@@ -118,6 +125,8 @@ extension MainViewController : ProductManagerDelegate {
         
         self.allProducts = allProducts
         collectionView.reloadData()
+        
+        activitiIndicator.stopAnimating()
     }
 }
 
