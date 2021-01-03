@@ -16,6 +16,7 @@
 		524C901A2599262900DFEDEA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524C90192599262900DFEDEA /* Extensions.swift */; };
 		527177BD25A08C1700FB6E5E /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527177BC25A08C1700FB6E5E /* Product.swift */; };
 		527177C225A08C4700FB6E5E /* Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527177C125A08C4700FB6E5E /* Metadata.swift */; };
+		527177CA25A2257600FB6E5E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 527177C925A2257600FB6E5E /* README.md */; };
 		528C056725961C9300E0372C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528C056625961C9300E0372C /* AppDelegate.swift */; };
 		528C056925961C9300E0372C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528C056825961C9300E0372C /* SceneDelegate.swift */; };
 		528C056E25961C9300E0372C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 528C056C25961C9300E0372C /* Main.storyboard */; };
@@ -63,6 +64,7 @@
 		524C90192599262900DFEDEA /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		527177BC25A08C1700FB6E5E /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		527177C125A08C4700FB6E5E /* Metadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metadata.swift; sourceTree = "<group>"; };
+		527177C925A2257600FB6E5E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		528C056325961C9300E0372C /* Ecomerce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ecomerce.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		528C056625961C9300E0372C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		528C056825961C9300E0372C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 		528C056525961C9300E0372C /* Ecomerce */ = {
 			isa = PBXGroup;
 			children = (
+				527177C925A2257600FB6E5E /* README.md */,
 				528C056625961C9300E0372C /* AppDelegate.swift */,
 				528C056825961C9300E0372C /* SceneDelegate.swift */,
 				528C057425961C9400E0372C /* Info.plist */,
@@ -373,6 +376,7 @@
 				528C057325961C9400E0372C /* LaunchScreen.storyboard in Resources */,
 				528C057025961C9400E0372C /* Assets.xcassets in Resources */,
 				52D7150A259B3C0600A8BD11 /* ProductInfoTableViewCell.xib in Resources */,
+				527177CA25A2257600FB6E5E /* README.md in Resources */,
 				52D4C823259A5D7C00191EA3 /* ProductDetailTableViewCell.xib in Resources */,
 				528C056E25961C9300E0372C /* Main.storyboard in Resources */,
 				52D4C82D259A5DCC00191EA3 /* ImageCollectionViewCell.xib in Resources */,
