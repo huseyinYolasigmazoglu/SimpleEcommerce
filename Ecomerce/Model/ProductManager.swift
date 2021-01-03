@@ -29,8 +29,8 @@ class ProductManager {
     //MARK: - Constructor
     init(endPoint:String,imageUrl:String) {
         
-        self.endPointUrl = Constants.testUrl
-        self.mainImageUrlBase = Constants.mainImageUrlBase
+        self.endPointUrl = endPoint
+        self.mainImageUrlBase = imageUrl
     }
     
     //MARK: - Private Functions
