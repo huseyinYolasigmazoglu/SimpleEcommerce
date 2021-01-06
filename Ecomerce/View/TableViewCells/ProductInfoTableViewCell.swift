@@ -55,7 +55,7 @@ class ProductInfoTableViewCell: UITableViewCell {
         if let detail = product {
             self.productName.text = detail.name
             self.productCost.text = detail.cost?.toTwoDigitFloatString() ?? ""
-            self.productId.text =   "Product  no: \(detail.prodid ?? "")"
+            self.productId.text =   "Product  no: \(detail.prodid)"
         }
     }
     override func setSelected(_ selected: Bool, animated: Bool) {

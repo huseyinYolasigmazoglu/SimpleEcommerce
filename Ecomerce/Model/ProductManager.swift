@@ -58,7 +58,7 @@ class ProductManager {
             let image = prdct.mainImage ?? ""
             
             if image.isEmpty {
-                prdct.mainImage = findMainImage(id: prdct.prodid!)
+                prdct.mainImage = findMainImage(id: prdct.prodid)
             }
         }
     }
