@@ -43,9 +43,12 @@ class FilterViewController: UIViewController {
     
     private var sortCases =
         ["Price - Low to High",
-         "Price - Hight to Low"]
+         "Price - High to Low",
+         "Date - Newest",
+         "Date - Oldest",
+         "None"]
     
-    var selectedSortIndex : Int = 0
+    //var selectedSortIndex : Int = 0
     var selectedSortEnum   = SortEnum.lowToHigh
     var delegate : FilterViewControllerDelegate?
     
@@ -92,7 +95,7 @@ extension FilterViewController : UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        selectedSortIndex = indexPath.row
+        //selectedSortIndex = indexPath.row
         selectedSortEnum = SortEnum(rawValue: indexPath.row) ?? SortEnum.lowToHigh
         tableView.reloadData()
     }

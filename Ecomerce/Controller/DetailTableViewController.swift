@@ -26,6 +26,8 @@ class DetailTableViewController: UIViewController, UITableViewDelegate {
     
     var product : Product?
     
+    
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()

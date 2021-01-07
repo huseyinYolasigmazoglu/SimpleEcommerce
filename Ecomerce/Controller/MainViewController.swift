@@ -138,7 +138,12 @@ extension MainViewController : FilterViewControllerDelegate {
             
         case SortEnum.highToLow:
             self.allProducts?.Products.sort(by: { $0.costFloat ?? 0 > $1.costFloat ?? 0 })
-            
+        case SortEnum.DateNewest:
+            self.allProducts?.Products.sort(by: { $0.dateSort > $1.dateSort })
+        case SortEnum.DateOldest:
+            self.allProducts?.Products.sort(by: { $0.dateSort < $1.dateSort  })
+        case SortEnum.None:
+            manager.getProducts()
         }
         selectedSort = sortCase
         collectionView.reloadData()
