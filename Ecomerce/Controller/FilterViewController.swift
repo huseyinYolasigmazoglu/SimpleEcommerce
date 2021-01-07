@@ -46,7 +46,9 @@ class FilterViewController: UIViewController {
          "Price - High to Low",
          "Date - Newest",
          "Date - Oldest",
-         "None"]
+         "None",
+         "Show price as EUR",
+         "Show price as GBP"]
     
     //var selectedSortIndex : Int = 0
     var selectedSortEnum   = SortEnum.lowToHigh

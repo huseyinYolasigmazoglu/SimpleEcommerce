@@ -20,5 +20,7 @@ enum SortEnum : Int {
     case DateNewest
     case DateOldest
     case None
+    case ShowEUR
+    case ShowGBP
 }
 

@@ -192,10 +192,10 @@ vvvvvvvv</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SjW-5h-Aj3">
-                                <rect key="frame" x="0.0" y="94" width="414" height="300"/>
+                                <rect key="frame" x="0.0" y="94" width="414" height="350"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="TIc-l3-U6o"/>
+                                    <constraint firstAttribute="height" constant="350" id="TIc-l3-U6o"/>
                                 </constraints>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="YWH-dl-E9f">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>

@@ -32,6 +32,8 @@ class MainViewController: UIViewController {
     
     private var selectedSort = SortEnum.lowToHigh
     
+    private var currency = "GBP"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -89,7 +91,7 @@ extension MainViewController : UICollectionViewDataSource {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.ProductCell, for: indexPath) as! ProductViewCell
         
-        
+        cell.currency = self.currency
         cell.setProduct(product: manager.getProduct(indexPath.row))
         
         return cell   
@@ -143,7 +145,12 @@ extension MainViewController : FilterViewControllerDelegate {
         case SortEnum.DateOldest:
             self.allProducts?.Products.sort(by: { $0.dateSort < $1.dateSort  })
         case SortEnum.None:
+            self.currency = "GBP"
             manager.getProducts()
+        case SortEnum.ShowEUR:
+            self.currency = "EUR"
+        case SortEnum.ShowGBP:
+            self.currency = "GBP"
         }
         selectedSort = sortCase
         collectionView.reloadData()

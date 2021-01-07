@@ -16,6 +16,8 @@ class ProductViewCell: UICollectionViewCell {
     
     @IBOutlet private weak var productCost: UILabel!
     
+    var currency = ""
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         
@@ -33,7 +35,18 @@ class ProductViewCell: UICollectionViewCell {
             
             setProductName(name: _product.name ?? "")
             
-            setProductCost(cost: _product.cost ?? "")
+            if currency == "GBP" {
+                print("GBP")
+                setProductCost(cost: _product.cost ?? "")
+            }
+            else if currency == "EUR" {
+                print("EUR")
+                setProductCost(cost: _product.costEUR ?? "")
+            }
+            else {
+                print("none")
+                setProductCost(cost: _product.cost ?? "")
+            }
         }  
     }
     
