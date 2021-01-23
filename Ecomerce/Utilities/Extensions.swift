@@ -9,9 +9,9 @@ import Foundation
 
 extension String {
     
-    func toTwoDigitFloatString() -> String {
+    func toTwoDigitFloatString(currencySymbol : String) -> String {
         //replece to two digit float
-        return String(format: "£%.2f", Float(self) ?? 0).replacingOccurrences(of: ".", with: ",")
+        return String(format: "%@%.2f",currencySymbol,Float(self) ?? 0).replacingOccurrences(of: ".", with: ",")
     }
     
     func toFloat() -> Float {

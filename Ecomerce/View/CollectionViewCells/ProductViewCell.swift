@@ -22,9 +22,11 @@ class ProductViewCell: UICollectionViewCell {
         super.prepareForReuse()
         
         //reset all
+        self.productMainImage.sd_cancelCurrentImageLoad()
         productName.text = ""
         productMainImage.image = nil
         productCost.text = ""
+        
     }
     
     func setProduct(product:Product?)  {
@@ -36,25 +38,21 @@ class ProductViewCell: UICollectionViewCell {
             setProductName(name: _product.name ?? "")
             
             if currency == "GBP" {
-                print("GBP")
-                setProductCost(cost: _product.cost ?? "")
+                setProductCost(cost: _product.cost ?? "", currencySymbol: "£")
             }
             else if currency == "EUR" {
-                print("EUR")
-                setProductCost(cost: _product.costEUR ?? "")
+                setProductCost(cost: _product.costEUR ?? "", currencySymbol: "€")
             }
             else {
                 print("none")
-                setProductCost(cost: _product.cost ?? "")
+                setProductCost(cost: _product.cost ?? "", currencySymbol: "£")
             }
         }  
     }
     
     func setProductImage(urlLink: String) {
-        
         if urlLink != "" {
             let imageUrl = URL(string: urlLink)!
-            
             productMainImage.sd_setImage(with: imageUrl)
         }
     }
@@ -66,10 +64,10 @@ class ProductViewCell: UICollectionViewCell {
         }
     }
     
-    func setProductCost(cost: String) {
+    func setProductCost(cost: String , currencySymbol : String) {
         
         if cost != "" {
-            productCost.text = cost.toTwoDigitFloatString()
+            productCost.text = cost.toTwoDigitFloatString(currencySymbol: currencySymbol)
         }
     }
     

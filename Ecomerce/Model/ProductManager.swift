@@ -8,7 +8,7 @@
 import Foundation
 
 //MARK: - protocol
-protocol ProductManagerDelegate {
+protocol ProductManagerDelegate : class{
     
     func loadData(_ productManagerDelegate: ProductManager,allProducts: ProductDetail? )
 }
@@ -19,18 +19,39 @@ class ProductManager {
     
     private var productApi = ApiOperations()
     private var allProducts : ProductDetail?
-    private var endPointUrl :String
-    private var mainImageUrlBase :String
+    private var _endPointUrl :String
+    private var _mainImageUrlBase :String
     
     //MARK: -  variables
-    var delegate : ProductManagerDelegate?
+    
+    var endPointUrl:String{
+        get{
+            return _endPointUrl
+        }
+        set (newValue){
+            
+            _endPointUrl =  newValue.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""
+        }
+    }
+    
+    var mainImageUrlBase:String{
+        get{
+            return _mainImageUrlBase
+        }
+        set (newValue){
+            
+            _mainImageUrlBase =  newValue.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""
+        }
+    }
+    
+    weak var delegate : ProductManagerDelegate?
     
     
     //MARK: - Constructor
     init(endPoint:String,imageUrl:String) {
         
-        self.endPointUrl = endPoint
-        self.mainImageUrlBase = imageUrl
+        self._endPointUrl = endPoint
+        self._mainImageUrlBase = imageUrl
     }
     
     //MARK: - Private Functions
@@ -73,15 +94,6 @@ class ProductManager {
     }
     
     //MARK: - Functions
-    func setUrl(with url:String)  {
-        
-        endPointUrl =  url.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""
-    }
-    
-    func setMainImageUrl(with url:String)  {
-        
-        mainImageUrlBase =  url.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""
-    }
     
     func getProducts()  {
         
@@ -96,28 +108,6 @@ class ProductManager {
                 }
             }
         }
-    }
-    
-    func getProductName(_ index:Int) -> String {
-        
-        var name = ""
-        
-        if let product = self.allProducts?.Products[index] {
-            name = product.name ?? ""
-        }
-        
-        return name
-    }
-    
-    func getProductPrice(_ index:Int) -> String {
-        
-        var cost = ""
-        
-        if let product = self.allProducts?.Products[index] {
-            cost = product.cost ?? ""
-        }
-        
-        return cost
     }
     
     func getProduct(_ index:Int) -> Product? {

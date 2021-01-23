@@ -28,7 +28,18 @@ class ProductInfoTableViewCell: UITableViewCell {
     
     private var _height  : CGFloat = 300
     
-    var product : Product?
+    var product : Product? {
+        
+        didSet {
+            
+            if let detail = product {
+                self.productName.text = detail.name
+                self.productCost.text = detail.cost?.toTwoDigitFloatString(currencySymbol: "£") ?? ""
+                self.productId.text =   "Product  no: \(detail.prodid)"
+            }
+            
+        }
+    }
     
     var height   : CGFloat {
         get {
@@ -47,19 +58,12 @@ class ProductInfoTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        if let detail = product {
-            self.productName.text = detail.name
-            self.productCost.text = detail.cost?.toTwoDigitFloatString() ?? ""
-            self.productId.text =   "Product  no: \(detail.prodid)"
-        }
-    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
-        
         
     }
     override func setHighlighted(_ highlighted: Bool, animated: Bool){

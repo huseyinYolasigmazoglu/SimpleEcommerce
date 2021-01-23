@@ -11,7 +11,6 @@ enum ProductDetailSections:Int {
     
     case imageGallery
     case productDetail
-    
 }
 
 enum SortEnum : Int {

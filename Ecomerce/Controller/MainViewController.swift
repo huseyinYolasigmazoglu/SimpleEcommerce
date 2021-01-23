@@ -28,6 +28,7 @@ class MainViewController: UIViewController {
     
     private var collectionViewCellWidth : CGFloat = 180
     private var  allProducts : ProductDetail?
+    
     private var manager : ProductManager  =  ProductManager(endPoint: Constants.testUrl, imageUrl: Constants.mainImageUrlBase)
     
     private var selectedSort = SortEnum.lowToHigh
@@ -47,6 +48,7 @@ class MainViewController: UIViewController {
         manager.delegate = self
         
         manager.getProducts()
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -93,9 +95,11 @@ extension MainViewController : UICollectionViewDataSource {
         
         cell.currency = self.currency
         cell.setProduct(product: manager.getProduct(indexPath.row))
+
         
         return cell   
     }
+    
     //for header
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
@@ -124,8 +128,8 @@ extension MainViewController : ProductManagerDelegate {
         
         self.allProducts = allProducts
         collectionView.reloadData()
-        
         activitiIndicator.stopAnimating()
+        
     }
 }
 
@@ -153,8 +157,10 @@ extension MainViewController : FilterViewControllerDelegate {
             self.currency = "GBP"
         }
         selectedSort = sortCase
+        
         collectionView.reloadData()
         collectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+        
     }
     
 }

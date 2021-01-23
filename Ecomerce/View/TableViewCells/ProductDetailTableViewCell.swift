@@ -30,7 +30,16 @@ class ProductDetailTableViewCell: UITableViewCell {
     private var currentPageControlIndex = 0
     private var _cellSize : CGSize = CGSize(width: ProductDetailTableViewCell.minCellWidth, height: ProductDetailTableViewCell.minCellHeight)
     
-    var productDetail : Product?
+    var productDetail : Product? {
+        didSet{
+            if let product = productDetail {
+                pageControl.numberOfPages = product.allImages?.count ?? 0
+            }
+            else{
+                pageControl.numberOfPages = 0
+            }
+        }
+    }
     
     var cellSize : CGSize {
         get {
@@ -55,17 +64,6 @@ class ProductDetailTableViewCell: UITableViewCell {
         collectionView.delegate = self
         collectionView.dataSource = self
         
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        if let product = productDetail {
-            pageControl.numberOfPages = product.allImages?.count ?? 0
-        }
-        else {
-            pageControl.numberOfPages = 0
-        }
     }
 }
 

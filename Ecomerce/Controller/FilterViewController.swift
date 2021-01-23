@@ -9,7 +9,7 @@ import UIKit
 
 
 //MARK: -protocol
-protocol FilterViewControllerDelegate {
+protocol FilterViewControllerDelegate : class  {
     
     func sort(_ filterDelegate: FilterViewController,sortCase: SortEnum)
 }
@@ -21,6 +21,7 @@ extension FilterViewController {
         
         selectedSortEnum = SortEnum.lowToHigh
         tableView.reloadData()
+        
     }
     
     @IBAction private func dismissView(_ sender: UIBarButtonItem) {
@@ -52,7 +53,7 @@ class FilterViewController: UIViewController {
     
     //var selectedSortIndex : Int = 0
     var selectedSortEnum   = SortEnum.lowToHigh
-    var delegate : FilterViewControllerDelegate?
+    weak var delegate : FilterViewControllerDelegate?
     
     
     override func viewDidLoad() {
@@ -99,7 +100,9 @@ extension FilterViewController : UITableViewDelegate,UITableViewDataSource {
         
         //selectedSortIndex = indexPath.row
         selectedSortEnum = SortEnum(rawValue: indexPath.row) ?? SortEnum.lowToHigh
+        
         tableView.reloadData()
+        
     }
     
 }

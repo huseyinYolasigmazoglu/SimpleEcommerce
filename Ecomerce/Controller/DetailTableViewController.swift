@@ -26,8 +26,7 @@ class DetailTableViewController: UIViewController, UITableViewDelegate {
     
     var product : Product?
     
-    
-    
+
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -83,22 +82,28 @@ extension DetailTableViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         switch indexPath.row {
+        
         case ProductDetailSections.imageGallery.rawValue:
             return productImageGallerySize.height
+            
         case ProductDetailSections.productDetail.rawValue:
             return productDetailHeight
         default:
             return 50
+            
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         switch indexPath.row {
+        
         case ProductDetailSections.imageGallery.rawValue:
             return cellForImageGallery(indexPath,withIdentifier: ProductDetailTableViewCell.identifier)
+            
         case ProductDetailSections.productDetail.rawValue:
             return cellForProductDetail(indexPath, withIdentifier: ProductInfoTableViewCell.identifier)
+            
         default:
             let cell  = UITableViewCell()
             return cell
