@@ -3,7 +3,7 @@
 This is a simple ecommmerce project.
 
 My Enviroment:
-- xCode Version 12.3 (12C33)
+- xCode Version 12.4 (12C33)
 - My swift version : Swift 5
 
 
