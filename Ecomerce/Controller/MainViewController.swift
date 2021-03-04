@@ -12,7 +12,6 @@ extension MainViewController {
     
     @IBAction func filter(_ sender: UIBarButtonItem) {
         //goToSortSegue
-        
         performSegue(withIdentifier: Constants.goToSortSegue, sender: self)
     }
 }
@@ -22,8 +21,6 @@ class MainViewController: UIViewController {
     
     
     @IBOutlet private weak var activitiIndicator: UIActivityIndicatorView!
-    
-    
     @IBOutlet private weak var collectionView: UICollectionView!
     
     private var collectionViewCellWidth : CGFloat = 180
@@ -95,7 +92,7 @@ extension MainViewController : UICollectionViewDataSource {
         
         cell.currency = self.currency
         cell.setProduct(product: manager.getProduct(indexPath.row))
-
+        
         
         return cell   
     }

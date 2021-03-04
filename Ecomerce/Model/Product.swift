@@ -17,5 +17,4 @@ class Product: Codable {
     public var mainImage:String?  //mainImage : not in json , /will be used to find main image to show in collectionview.
     public var dateSort:Int
     public var costEUR:String?
-    
 }
